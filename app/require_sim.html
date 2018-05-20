@@ -19,108 +19,60 @@
     </div>
     <div id="sys-title">华宁电子产品展示</div>
   </div>
+<hr/>
+<div layout="row">
+  <div style="color:white;text-align:center;width:25%">
+    <!-- 一级产品列表 -->
+    <md-button style="width:100%" ng-click="rec()">热门推荐</md-button>
+    <md-button style="width:100%" ng-click="first()">组合开关</md-button>
+    <md-button style="width:100%" ng-click="second()">通讯控制</md-button>
+    <md-button style="width:100%" ng-click="third()">传感器</md-button>
+    <md-button style="width:100%" ng-click="fourth()">变频器</md-button>
+    <md-button style="width:100%" ng-click="fifth()">负荷中心</md-button>
+    <md-button style="width:100%" ng-click="sixth()">支架电液</md-button>
+  </div>
+  <!-- 二级产品列表 -->
+  <div style="color:white;text-align:center;width:65%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="first_flag">
+    <md-button style="width:100%" ng-click="first_1()" >2-4矿用隔爆兼本质安全型</md-button>
+    <md-button style="width:100%" ng-click="first_2()">4-6矿用隔爆兼本质安全型</md-button>
+    <md-button style="width:100%" ng-click="first_3()">6-8矿用隔爆兼本质安全型</md-button>
+    <md-button style="width:100%" ng-click="first_4()">9-10矿用隔爆兼本质安全型</md-button>
+    <md-button style="width:100%" ng-click="first_5()">9-12矿用隔爆兼本质安全型</md-button>
+    <md-button style="width:100%" ng-click="first_6()">8-9卧式矿用隔爆兼本质安全型</md-button>
+  </div>
+  <div style="color:white;text-align:center;width:55%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="second_flag">
+    <md-button style="width:100%" ng-click="second_1()">KTC101系列组合扩音电话</md-button>
+    <md-button style="width:100%" ng-click="secod_2()">KTC102系列组合扩音电话</md-button>
+    <md-button style="width:100%" ng-click="secod_3()">急停闭锁开关</md-button>
+    <md-button style="width:100%" ng-click="secod_4()">控制器</md-button>
+    <md-button style="width:100%" ng-click="secod_5()">多功能终端</md-button>
+    <md-button style="width:100%" ng-click="secod_6()">电源</md-button>
+    <md-button style="width:100%" ng-click="secod_7()">输入输出</md-button>
+
+  </div>
+  <div style="color:white;text-align:center;width:50%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="third_flag">
+    <md-button style="width:100%" ng-click="third_1()">速度传感器CSC6</md-button>
+    <md-button style="width:100%" ng-click="third_2()">堆煤传感器GUD-330</md-button>
+    <md-button style="width:100%" ng-click="third_3()">跑偏传感器GEJ-15</md-button>
+    <md-button style="width:100%" ng-click="third_4()">温度传感器GWM-45</md-button>
+    <md-button style="width:100%" ng-click="third_5()">烟雾传感器GQL0.1</md-button>
+  </div>
+  <div style="color:white;text-align:center;width:75%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="fourth_flag">
+    <md-button style="width:100%" ng-click="fourth_1()">矿用隔爆兼本质安全型交流变频器</md-button>
+  </div>
+  <div style="color:white;text-align:center;width:50%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="fifth_flag">
+    <md-button style="width:100%" ng-click="fifth_1()">胶带机变频动力中心</md-button>
+  </div>
+  <div style="color:white;text-align:center;width:25%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="sixth_flag">
+    <md-button style="width:100%" ng-click="sixth_1()">阀类产品</md-button>
+    <md-button style="width:100%" ng-click="sixth_2()">电控产品</md-button>
+  </div>
+</div>
 
 
 
-  <!-- <div id="content">
-
-    <div id="period">
-      保障周期
-      <md-input-container class="md-block">
-        <input required type="number" step="any" name="period" ng-model="period" min="0" max="999" />
-      </md-input-container>
-    </div>
-
-    <div id="input-table-container">
-      <table class="input-table">
-        <thead>
-          <tr>
-            <th>head1</th>
-            <th>head2</th>
-            <th>head3</th>
-            <th>head4</th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr>
-          </tr>
-        </tfoot>
-        <tbody>
-          <tr>
-            <td>cell1_1</td>
-            <td>cell2_1</td>
-            <td>cell3_1</td>
-            <td>cell4_1</td>
-          </tr>
-          <tr>
-            <td>cell1_2</td>
-            <td>cell2_2</td>
-            <td>cell3_2</td>
-            <td>cell4_2</td>
-          </tr>
-          <tr>
-            <td>cell1_3</td>
-            <td>cell2_3</td>
-            <td>cell3_3</td>
-            <td>cell4_3</td>
-          </tr>
-          <tr>
-            <td>cell1_4</td>
-            <td>cell2_4</td>
-            <td>cell3_4</td>
-            <td>cell4_4</td>
-          </tr>
-        </tbody>
-        </tr>
-      </table>
-    </div>
-
-    <div id="data-table-container">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>head1</th>
-            <th>head2</th>
-            <th>head3</th>
-            <th>head4</th>
-            <th>head5</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>cell1_1</td>
-            <td>cell2_1</td>
-            <td>cell3_1</td>
-            <td>cell4_1</td>
-            <td>cell5_1</td>
-          </tr>
-          <tr>
-            <td>cell1_2</td>
-            <td>cell2_2</td>
-            <td>cell3_2</td>
-            <td>cell4_2</td>
-            <td>cell5_2</td>
-          </tr>
-          <tr>
-            <td>cell1_3</td>
-            <td>cell2_3</td>
-            <td>cell3_3</td>
-            <td>cell4_3</td>
-            <td>cell5_3</td>
-          </tr>
-          <tr>
-            <td>cell1_4</td>
-            <td>cell2_4</td>
-            <td>cell3_4</td>
-            <td>cell4_4</td>
-            <td>cell5_4</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
 
 
-  </div> -->
 
 
 
