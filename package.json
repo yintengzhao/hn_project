@@ -13,7 +13,8 @@
     "angular-weather-widget": "^1.2.4",
     "chart.js": "^2.7.1",
     "jquery": "^3.2.1",
-    "requirejs": "^2.3.5"
+    "requirejs": "^2.3.5",
+    "wangeditor": "^3.1.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
