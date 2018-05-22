@@ -52,6 +52,75 @@
 
   <div id="middle-part">
 
+
+
+    <!-- 上传图片部分 -->
+    <!-- <input type="file" id="upload" custom-on-change="uploadFile"> -->
+    <!-- <section>
+        <div>
+            <form ng-submit="submit_form()" style="width:10%">
+              <div layout="column" >
+                <md-input-container>
+                <label>Title</label>
+                <input type="text" name="aaa" placeholder="商品名称：" ng-model="form.goods_name" />
+              </md-input-container>
+
+              <md-input-container>
+                <label>Title</label>
+                <input type="text" name="bbb" placeholder="商品网址：" ng-model="form.goods_url" />
+              </md-input-container>
+              <textarea placeholder="产品描述" ng-model="form.user_msg" style="margin-top:20px"></textarea>
+            </div>
+            <div>
+
+              <div ng-repeat="item in thumb" layout="column"> -->
+                <!-- 采用angular循环的方式，对存入thumb的图片进行展示 -->
+
+                <!-- <label >
+                  <img style="width:100%" ng-src="{{item.imgSrc}}"/>
+                </label>
+                <ng-md-icon icon="delete_sweep" style="fill: ..." size="30px" ng-if="item.imgSrc" ng-click="img_del($index)"></ng-md-icon> -->
+                <!-- <md-button class="md-raised" ng-if="item.imgSrc" ng-click="img_del($index)">11111111</md-button> -->
+              <!-- </div>
+
+            <div ng-repeat="item in thumb_default"> -->
+              <!-- 这里之所以写个循环，是为了后期万一需要多个‘加号’框 -->
+              <!-- <label>
+                <input type="file" id="one-input" accept="image/*" file-model="images" onchange="angular.element(this).scope().img_upload(this.files)"/>
+              </label>
+            </div>
+          </div>
+          <input type="submit" name="" value="提 交" />
+        </form>
+      </div>
+    </section> -->
+    <form method="POST" action="http://10.134.45.94:8080/ProductCenter/uploadImage" enctype="multipart/form-data" id="form1">
+      File to upload:
+      <input type="file" name="file">
+      <input type="submit" value="Upload">
+      Press here to upload the file!
+    </form>
+
+    <!-- <script type="text/javascript">
+     var form=document.getElementById("form1");
+     var formdata=new FormData(form);
+     $.ajax({
+           type : 'post',
+           url : 'http://10.134.45.94:8080/ProductCenter/uploadImage',
+           data : formdata,
+           cache : false,
+           processData : false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+           contentType : false, // 不设置Content-type请求头
+           success : function(){}
+           error : function(){ }
+       })
+  </script> -->
+  <form name="input" action="http://10.134.45.94:8080/ProductCenter/uploadImage" enctype="multipart/form-data" method="post">
+Username: <input type="file" name="file">
+<input type="submit" value="Submit">
+</form>
+
+
   </div>
 
 
