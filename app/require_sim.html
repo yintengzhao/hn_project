@@ -13,19 +13,19 @@
 
 <body ng-controller="RequireSimCtrl" id="require_sim" ng-class="" ng-cloak>
 
-  <div id="sys-title-logo">
+  <div id="sys-title-logo" style="height:10%">
     <div id="logo">
-      <img src="assets/logo.png">
+      <img src="assets/huaning-logo.png">
     </div>
-    <div id="sys-title">华宁电子产品展示</div>
+    <div id="sys-title">产品展示</div>
   </div>
 <!-- <hr/> -->
-<md-divider style="margin-top:10px;background-color:white"></md-divider>
+<md-divider style="color:gray"></md-divider>
 
-<div layout="row">
-  <div style="color:white;text-align:center;width:25%">
+<div layout="row" style="height:85%">
+  <div style="color:black;text-align:center;width:25%">
     <!-- 一级产品列表 -->
-    <md-button style="width:100%" ng-click="rec()">热门推荐</md-button>
+    <md-button style="width:100%" ng-click="rec()">所有产品</md-button>
     <md-button style="width:100%" ng-click="first()">组合开关</md-button>
     <md-button style="width:100%" ng-click="second()">通讯控制</md-button>
     <md-button style="width:100%" ng-click="third()">传感器</md-button>
@@ -34,7 +34,7 @@
     <md-button style="width:100%" ng-click="sixth()">支架电液</md-button>
   </div>
   <!-- 二级产品列表 -->
-  <div style="color:white;text-align:center;width:65%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="first_flag">
+  <div style="color:black;text-align:center;width:65%;height:60%;background-color:rgba(0, 0, 0, 0.13)" ng-show="first_flag">
     <md-button style="width:100%" ng-click="first_1()" >2-4矿用隔爆兼本质安全型</md-button>
     <md-button style="width:100%" ng-click="first_2()">4-6矿用隔爆兼本质安全型</md-button>
     <md-button style="width:100%" ng-click="first_3()">6-8矿用隔爆兼本质安全型</md-button>
@@ -42,7 +42,7 @@
     <md-button style="width:100%" ng-click="first_5()">9-12矿用隔爆兼本质安全型</md-button>
     <md-button style="width:100%" ng-click="first_6()">8-9卧式矿用隔爆兼本质安全型</md-button>
   </div>
-  <div style="color:white;text-align:center;width:55%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="second_flag">
+  <div style="color:black;text-align:center;width:55%;height:70%;background-color:rgba(0, 0, 0, 0.13)" ng-show="second_flag">
     <md-button style="width:100%" ng-click="second_1()">KTC101系列组合扩音电话</md-button>
     <md-button style="width:100%" ng-click="secod_2()">KTC102系列组合扩音电话</md-button>
     <md-button style="width:100%" ng-click="secod_3()">急停闭锁开关</md-button>
@@ -52,34 +52,58 @@
     <md-button style="width:100%" ng-click="secod_7()">输入输出</md-button>
 
   </div>
-  <div style="color:white;text-align:center;width:50%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="third_flag">
+  <div style="color:black;text-align:center;width:50%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="third_flag">
     <md-button style="width:100%" ng-click="third_1()">速度传感器CSC6</md-button>
     <md-button style="width:100%" ng-click="third_2()">堆煤传感器GUD-330</md-button>
     <md-button style="width:100%" ng-click="third_3()">跑偏传感器GEJ-15</md-button>
     <md-button style="width:100%" ng-click="third_4()">温度传感器GWM-45</md-button>
     <md-button style="width:100%" ng-click="third_5()">烟雾传感器GQL0.1</md-button>
   </div>
-  <div style="color:white;text-align:center;width:75%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="fourth_flag">
+  <div style="color:black;text-align:center;width:75%;height:10%;background-color:rgba(0, 0, 0, 0.13)" ng-show="fourth_flag">
     <md-button style="width:100%" ng-click="fourth_1()">矿用隔爆兼本质安全型交流变频器</md-button>
   </div>
-  <div style="color:white;text-align:center;width:50%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="fifth_flag">
+  <div style="color:black;text-align:center;width:50%;height:10%;background-color:rgba(0, 0, 0, 0.13)" ng-show="fifth_flag">
     <md-button style="width:100%" ng-click="fifth_1()">胶带机变频动力中心</md-button>
   </div>
-  <div style="color:white;text-align:center;width:25%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="sixth_flag">
+  <div style="color:black;text-align:center;width:25%;height:20%;background-color:rgba(0, 0, 0, 0.13)" ng-show="sixth_flag">
     <md-button style="width:100%" ng-click="sixth_1()">阀类产品</md-button>
     <md-button style="width:100%" ng-click="sixth_2()">电控产品</md-button>
   </div>
+
+
+
+
+
+
+
+
+
+<div style="height:98%;width:75%;text-align:center;overflow-y:scroll;overflow-x:hidden;" layout="row" ng-show="allpros_flag">
+<!-- 第一列 -->
+<div layout="column" style="width:50%;text-align:center;margin-left:50px">
+  <div layout="column" ng-repeat="allpro in allpros_1" style="color:black;text-align:center;width:50%;margin-top:10px">
+    <img ng-src="http://10.134.45.94:8080/{{allpro.image}}" style="margin-top:10px;width:70%;height:50%;text-align:center">
+    <span>{{allpro.type}}</span>
+  </div>
+</div>
+<!-- 第二列 -->
+<div layout="column" style="width:50%;stext-align:center">
+<div layout="column" ng-repeat="allpro in allpros_2" style="color:black;text-align:center;width:50%;margin-top:10px">
+  <img ng-src="http://10.134.45.94:8080/{{allpro.image}}" style="width:70%;height:50%;margin-top:10px;marg-left:50px">
+  <span>{{allpro.type}}</span>
+</div>
+</div>
+</div>
+
 </div>
 
 
 
-<div style="position:absolute;color:white;font-size:5px;left:0;right:0;bottom:5px;text-align:center">
+
+
+<div style="position:absolute;color:black;font-size:5px;left:0;right:0;bottom:5px;text-align:center">
     Copyright 2018-2020 All Rights Reserved     天津华宁电子有限公司
 </div>
-
-
-
-
 </body>
 
 </html>
