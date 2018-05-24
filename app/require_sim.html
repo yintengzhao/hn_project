@@ -78,22 +78,26 @@
 
 
 
-<div id="all-pros" layout="row" ng-show="allpros_flag">
+<md-content layout="row" ng-show="allpros_flag">
 <!-- 第一列 -->
-<div layout="column" style="width:50%;text-align:center;margin-left:50px">
+<div layout="column" style="width:50%;text-align:center;margin-left:50px;height:300%">
   <div layout="column" ng-repeat="allpro in allpros_1" style="color:black;text-align:center;width:50%;margin-top:10px">
+    <a href="watch_goods.html?id={{allpro.id}}">
     <img ng-src="http://{{allpro.image}}" style="margin-top:10px;width:70%;height:50%;text-align:center">
     <span>{{allpro.type}}</span>
+    </a>
   </div>
 </div>
 <!-- 第二列 -->
-<div layout="column" style="width:50%;stext-align:center">
+<div layout="column" style="width:50%;stext-align:center;height:300%">
 <div layout="column" ng-repeat="allpro in allpros_2" style="color:black;text-align:center;width:50%;margin-top:10px">
+  <a href="watch_goods.html?id={{allpro.id}}">
   <img ng-src="http://{{allpro.image}}" style="width:70%;height:50%;margin-top:10px;marg-left:50px">
   <span>{{allpro.type}}</span>
+  </a>
 </div>
 </div>
-</div>
+</md-content>
 
 </div>
 
