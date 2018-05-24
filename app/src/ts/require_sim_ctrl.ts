@@ -170,6 +170,8 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
       $scope.sixth_flag=false;
       $scope.allpros_flag=false;
       $scope.second_1=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
         var workid={
                   method:'POST',
                   url:'http://10.134.45.94:8080/ProductCenter/showClass',
@@ -181,7 +183,109 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
                     $scope.allpros_1.push($scope.allpros_2.shift())
                   };
                   $scope.allpros_flag=true;
-                  $scope.first_flag=false;
+                  $scope.second_flag=false;
+                },function(){alert('err')});
+      }
+      $scope.second_2=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.second_flag=false;
+                },function(){alert('err')});
+      }
+      $scope.second_3=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.second_flag=false;
+                },function(){alert('err')});
+      }
+      $scope.second_4=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.second_flag=false;
+                },function(){alert('err')});
+      }
+      $scope.second_5=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.second_flag=false;
+                },function(){alert('err')});
+      }
+      $scope.second_6=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.second_flag=false;
+                },function(){alert('err')});
+      }
+      $scope.second_7=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.second_flag=false;
                 },function(){alert('err')});
       }
 
@@ -195,6 +299,91 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
       $scope.fifth_flag=false;
       $scope.sixth_flag=false;
       $scope.allpros_flag=false;
+      $scope.third_1=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.third_flag=false;
+                },function(){alert('err')});
+      }
+      $scope.third_2=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.third_flag=false;
+                },function(){alert('err')});
+      }
+      $scope.third_3=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.third_flag=false;
+                },function(){alert('err')});
+      }
+      $scope.third_4=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.third_flag=false;
+                },function(){alert('err')});
+      }
+      $scope.third_5=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.third_flag=false;
+                },function(){alert('err')});
+      }
 
     }
     $scope.fourth=function()
@@ -206,6 +395,23 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
       $scope.fifth_flag=false;
       $scope.sixth_flag=false;
       $scope.allpros_flag=false;
+      $scope.fourth_1=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.fourth_flag=false;
+                },function(){alert('err')});
+      }
 
     }
     $scope.fifth=function()
@@ -217,6 +423,24 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
       $scope.fifth_flag=true;
       $scope.sixth_flag=false;
       $scope.allpros_flag=false;
+      $scope.fifth_1=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.fifth_flag=false;
+                },function(){alert('err')});
+      }
+
 
     }
     $scope.sixth=function()
@@ -228,6 +452,40 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
       $scope.fifth_flag=false;
       $scope.sixth_flag=true;
       $scope.allpros_flag=false;
+      $scope.sixth_1=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.sixth_flag=false;
+                },function(){alert('err')});
+      }
+      $scope.sixth_2=function(){
+        $scope.allpros_1=[];
+        $scope.allpros_2=[];
+        var workid={
+                  method:'POST',
+                  url:'http://10.134.45.94:8080/ProductCenter/showClass',
+                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                }
+                $http(workid).then(function(response){
+                  $scope.allpros_2 = response.data;
+                  while($scope.allpros_2>$scope.allpros_1){
+                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  };
+                  $scope.allpros_flag=true;
+                  $scope.sixth_flag=false;
+                },function(){alert('err')});
+      }
 
     }
     $window.onclick=function(){}

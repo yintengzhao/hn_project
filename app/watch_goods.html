@@ -16,7 +16,7 @@
     <div id="logo">
       <img src="assets/huaning-logo.png">
     </div>
-    <div id="sys-title">产品详情</div>
+    <div id="sys-title"><strong>产品详情</strong></div>
   </div>
 <!-- <hr/> -->
 <md-divider style="color:gray"></md-divider>
@@ -25,13 +25,16 @@
   <img ng-src="http://{{allpros.image}}" style="margin-top:10px;width:70%;height:50%;">
 </div>
 <md-content>
-<p>
-  机器型号： <span class="attr-value">{{allpros.type}}</span><br>
-  用途： <span class="attr-value">{{allpros.apply}}</span><br>
-  参数： <span class="attr-value">{{allpros.parammeter}}</span><br>
-  产品类别： <span class="attr-value">{{allpros.firstclass}}-{{allpros.secondclass}}</span><br>
+<p class="attr-value">
+  【机器型号】： <span class="type">{{allpros.type}}</span><br>
+  【产品类别】： <span class="class">{{allpros.firstclass}}------>{{allpros.secondclass}}</span><br>
+  【用途】： <span class="apply">{{allpros.apply}}</span><br>
+  【参数】： <span class="parameter">{{allpros.parammeter}}</span><br>
 </p>
 </md-content>
+<div id="bottom-word">
+    Copyright 2018-2020 All Rights Reserved     天津华宁电子有限公司
+</div>
 </body>
 
 </html>
