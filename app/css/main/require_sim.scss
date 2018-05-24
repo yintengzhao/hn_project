@@ -4,16 +4,46 @@
 
 #sys-title-logo {
 	width: 100%;
+	height: 10%;
 	padding-top: 5px;
 }
+#pro-part{
+	width: 100%;
+	height: 85%;
+	#first-class{
+		color:black;
+		text-align:center;
+		width:25%;
+		height: 100%
+	}
+	#all-pros{
+		width:75%;
+		height:100%;
+		text-align:center;
+		overflow-y:scroll;
+		// overflow-x:hidden;
+	}
+}
+#virtual-part{
+	height: 4%
+}
+#bottom-word{
+	height:1%;
+	position:absolute;
+	color:black;
+	font-size:5px;
+	left:0;
+	right:0;
+	bottom:5px;
+	text-align:center
+}
+
 
 #logo {
 	display: inline-block;
-
 	img {
 		width: 200px;
 	}
-	// top: 20px;
 }
 
 #sys-title {
@@ -23,36 +53,8 @@
 	font-size: 36px;
 }
 
-#sys-subtitle{
-  color: rgb(208, 208, 208);
-  margin-left: 72px;
-  font-size: 28px;
-}
-#content{
-  border-radius: 4px;
-  margin-top: 0px;
-  padding: 16px 64px 72px;
-  margin: 15px 0px;
-  background-color: white;
-	height: 75%
-}
-#period{
-  width: 320px;
-  color: gray;
-  padding: 6px 24px 0px 0px;
-  border-radius: 4px;
-  font-size: 20px;
-}
 
-#input-table-container{
-  width: 480px;
-  background-color: white;
 
-}
-
-#data-table-container{
-  margin-top: 96px;
-}
 
 
 }

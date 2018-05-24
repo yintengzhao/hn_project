@@ -13,7 +13,7 @@
 
 <body ng-controller="RequireSimCtrl" id="require_sim" ng-class="" ng-cloak>
 
-  <div id="sys-title-logo" style="height:10%">
+  <div id="sys-title-logo" style="">
     <div id="logo">
       <img src="assets/huaning-logo.png">
     </div>
@@ -22,8 +22,8 @@
 <!-- <hr/> -->
 <md-divider style="color:gray"></md-divider>
 
-<div layout="row" style="height:85%">
-  <div style="color:black;text-align:center;width:25%">
+<div layout="row" id="pro-part">
+  <div  id="first-class">
     <!-- 一级产品列表 -->
     <md-button style="width:100%" ng-click="rec()">所有产品</md-button>
     <md-button style="width:100%" ng-click="first()">组合开关</md-button>
@@ -78,18 +78,18 @@
 
 
 
-<div style="height:98%;width:75%;text-align:center;overflow-y:scroll;overflow-x:hidden;" layout="row" ng-show="allpros_flag">
+<div id="all-pros" layout="row" ng-show="allpros_flag">
 <!-- 第一列 -->
 <div layout="column" style="width:50%;text-align:center;margin-left:50px">
   <div layout="column" ng-repeat="allpro in allpros_1" style="color:black;text-align:center;width:50%;margin-top:10px">
-    <img ng-src="http://10.134.45.94:8080/{{allpro.image}}" style="margin-top:10px;width:70%;height:50%;text-align:center">
+    <img ng-src="http://{{allpro.image}}" style="margin-top:10px;width:70%;height:50%;text-align:center">
     <span>{{allpro.type}}</span>
   </div>
 </div>
 <!-- 第二列 -->
 <div layout="column" style="width:50%;stext-align:center">
 <div layout="column" ng-repeat="allpro in allpros_2" style="color:black;text-align:center;width:50%;margin-top:10px">
-  <img ng-src="http://10.134.45.94:8080/{{allpro.image}}" style="width:70%;height:50%;margin-top:10px;marg-left:50px">
+  <img ng-src="http://{{allpro.image}}" style="width:70%;height:50%;margin-top:10px;marg-left:50px">
   <span>{{allpro.type}}</span>
 </div>
 </div>
@@ -98,10 +98,12 @@
 </div>
 
 
+<div id="virtual-part">
+
+</div>
 
 
-
-<div style="position:absolute;color:black;font-size:5px;left:0;right:0;bottom:5px;text-align:center">
+<div id="bottom-word">
     Copyright 2018-2020 All Rights Reserved     天津华宁电子有限公司
 </div>
 </body>
