@@ -122,6 +122,20 @@ $scope.del_pro=function(proid){
               });
   },function(){})
 
+};
+// 搜索模块
+$scope.search_pro=function(){
+  var workid={
+    method:'POST',
+    url:'http://10.134.45.94:8080/ProductCenter/findbyWord',
+    params: { word: $scope.the_max };
+  };
+  $http(workid).then(function(response){
+    for(let ma of response.data){
+      ma.apply=ma.apply.substring(0,30)
+    }
+    $scope.allpros = response.data;    },function(){})
+
 }
 
 

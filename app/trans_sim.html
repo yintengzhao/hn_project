@@ -14,12 +14,12 @@
 
     <div layout="{{ vm.direction }}" layout-md="row">
 
-      <div id="sys-title-logo">
+      <div id="sys-title-logo" layout="row">
         <div id="logo">
-          <img src="assets/logo.png">
+          <img src="assets/huaning-logo.png">
         </div>
-        <div id="sys-title">产品展示后台管理系统</div>
       </div>
+      <div id="sys-title"><strong>产品展示后台管理系统</strong></div>
 
       <div id="sys-date-bar">
         <div>
@@ -96,6 +96,21 @@
 
 
     <div id="add-tab">
+      <div style="background-color:rgba(7, 8, 7, 0.21);border-radius:5px;text-align:center;font-size:28px;width:100%;">搜索产品</div>
+      <div id="search-tab" layout="row">
+        <div>
+          <md-input-container class="md-block" flex-gt-sm >
+            <label>在此键入关键字</label>
+            <input ng-model="the_max">
+          </md-input-container>
+        </div>
+        <div>
+          <md-button class="md-raised" ng-click="search_pro()">搜索</md-button>
+        </div>
+      </div>
+
+      <hr />
+
       <div style="background-color:rgba(7, 8, 7, 0.21);border-radius:5px;text-align:center;font-size:28px">添加产品</div>
       <md-input-container class="md-block" flex-gt-sm>
         <label>型号</label>
@@ -114,19 +129,23 @@
 
       <md-input-container class="md-block" flex-gt-sm>
         <label>用途</label>
-        <input ng-model="apply">
+        <textarea ng-model="apply"></textarea>
+        <!-- <input ng-model="apply"> -->
       </md-input-container>
 
       <md-input-container class="md-block" flex-gt-sm>
       <label>参数</label>
-      <input ng-model="parameter">
+      <textarea ng-model="parameter"></textarea>
+      <!-- <input ng-model="parameter"> -->
     </md-input-container>
 
 
-    <div>
-      <input type="file" file-model="myFile" enctype="multipart/form-data">
+    <div id="file-box">
+      <input id="file-btn" type="file" file-model="myFile" enctype="multipart/form-data">
     </div>
-    <md-button class="md-raised" ng-click="add()">添加</md-button>
+    <md-button class="md-raised md-primary" id="add-btn" ng-click="add()">添加</md-button>
+
+
     </div>
   </div>
 
