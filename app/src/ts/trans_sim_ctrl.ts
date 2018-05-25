@@ -3,6 +3,7 @@ import { ng_app } from './ng_app';
 
 ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window', '$http', '$sce',
   function($scope, $interval, $timeout, $window, $http, $sce) {
+    var IpAdress:string="10.134.45.94";
 
 
     //time
@@ -52,10 +53,10 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
       }
     };
     // 增删改查部分.............................................................
-$scope.save=function(){
+$scope.add=function(){
   var fd = new FormData();
-        var file = document.querySelector('input[type=file]').files[0];
-        fd.append('file', file);
+  var file = document.querySelector('input[type=file]').files[0];
+  fd.append('file', file);
   var workid={
             method:'POST',
             url:'http://10.134.45.94:8080/ProductCenter/uploadImage',
@@ -63,17 +64,64 @@ $scope.save=function(){
             data: fd,
             headers: {'Content-Type':undefined},
             transformRequest: angular.identity,
-          }
-          $http(workid).then(function(response){},function(){alert('err')});
+          };
+          $http(workid).then
+          (
+            function(response){
+              // 添加模块
+              var workid={
+                        method:'POST',
+                        url:'http://10.134.45.94:8080/ProductCenter/addProduct',
+                        params: {type:$scope.type;apply:$scope.apply;parameter:$scope.parameter;firstclass:$scope.firstclass;secondclass:$scope.secondclass;image:response.data.path},
+                      }
+                      $http(workid).then(function(response){
+                        // 刷新产品信息
+                        $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
+                                  .then(function(response) {
+                                    for(let ma of response.data){
+                                      ma.apply=ma.apply.substring(0,30)
+                                    }
+                                    $scope.allpros = response.data;
+                                  });
+                      },function(){
+                        // alert('err');
+                        $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
+                                  .then(function(response) {
+                                    for(let ma of response.data){
+                                      ma.apply=ma.apply.substring(0,30)
+                                    }
+                                    $scope.allpros = response.data;
+                                  });
+                    });
+            },
+            function(response){console.log(response)}
+          );
 }
-// 添加模块
-$scope.add=function(){
+// 展示后台信息
+$http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
+          .then(function(response) {
+            for(let ma of response.data){
+              ma.apply=ma.apply.substring(0,30)
+            }
+            $scope.allpros = response.data;
+          });
+// 删除模块
+$scope.del_pro=function(proid){
   var workid={
-            method:'POST',
-            url:'http://10.134.45.94:8080/ProductCenter/addProduct',
-            params: {type:$scope.type;apply:$scope.apply;parameter:$scope.parameter;firstclass:$scope.firstclass;secondclass:$scope.secondclass;image:$scope.image},
-          }
-          $http(workid).then(function(response){console.log(response)},function(){alert('err')});
+    method:'POST',
+    url:'http://10.134.45.94:8080/ProductCenter/delProduct',
+    params: { id: proid }
+  };
+  $http(workid).then(function(){
+    $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
+              .then(function(response) {
+                for(let ma of response.data){
+                  ma.apply=ma.apply.substring(0,30)
+                }
+                $scope.allpros = response.data;
+              });
+  },function(){})
+
 }
 
 

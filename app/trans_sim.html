@@ -50,87 +50,96 @@
     </div>
   </div>
 
-  <div id="middle-part">
-
-  <!-- <form name="input" action="http://10.134.45.94:8080/ProductCenter/uploadImage" enctype="multipart/form-data" method="post">
-Username: <input type="file" name="file">
-<input type="submit" value="Submit">
-</form> -->
-<div>
-  <input type="file" file-model="myFile" enctype="multipart/form-data">
-  <button ng-click="save()" >保存</button>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div style="width:20%">
-  <md-input-container class="md-block" flex-gt-sm>
-    <label>type</label>
-    <input ng-model="type">
-  </md-input-container>
-
-  <md-input-container class="md-block" flex-gt-sm>
-    <label>apply</label>
-    <input ng-model="apply">
-  </md-input-container>
-
-  <md-input-container class="md-block" flex-gt-sm>
-  <label>parameter</label>
-  <input ng-model="parameter">
-</md-input-container>
-
-<md-input-container class="md-block" flex-gt-sm>
-  <label>firstclass</label>
-  <input ng-model="firstclass">
-</md-input-container>
-
-<md-input-container class="md-block" flex-gt-sm>
-  <label>secondclass</label>
-  <input ng-model="secondclass">
-</md-input-container>
-
-
-<md-button class="md-raised" ng-click="add()">添加</md-button>
-</div>
-
-
-
-
-
-</div>
-
-
-
-
-<div id="editor">
-        <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
+  <div id="middle-part" layout="row">
+    <div id="pro-table">
+      <div style="background-color:pink;border-radius:5px;text-align:center;font-size:28px">产品信息</div>
+      <md-content style="height:93%">
+        <table class="watch-table">
+          <thead>
+            <tr>
+              <th>序号</th>
+              <th style="width:200px">机器型号</th>
+              <th>主类别</th>
+              <th>次类别</th>
+              <th>用途</th>
+              <th>参数</th>
+              <th>查看图片</th>
+              <th>更新</th>
+              <th>删除</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="pro in allpros">
+              <td>{{pro.id}}</td>
+              <td>{{pro.type}}</td>
+              <td>{{pro.firstclass}}</td>
+              <td>{{pro.secondclass}}</td>
+              <td>{{pro.apply}}......</td>
+              <td>{{pro.parameter}}</td>
+              <td>
+                <a href="http://{{pro.image}}">
+                  <ng-md-icon icon="photo" style="fill: ..." size="30px"></ng-md-icon>
+                </a>
+              </td>
+              <td>
+                <ng-md-icon icon="edit" style="fill: ..." size="30px" ng-click=update_inventory(inventory.name,inventory.num,inventory.safenum,inventory.islandnum,inventory.zone,inventory.id)></ng-md-icon>
+              </td>
+              <td>
+                <ng-md-icon icon="delete_sweep" style="fill: ..." size="30px" ng-click="del_pro(pro.id)"></ng-md-icon>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </md-content>
     </div>
 
 
 
+    <div id="add-tab">
+      <div style="background-color:rgba(7, 8, 7, 0.21);border-radius:5px;text-align:center;font-size:28px">添加产品</div>
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>型号</label>
+        <input ng-model="type">
+      </md-input-container>
+
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>主类别</label>
+        <input ng-model="firstclass">
+      </md-input-container>
+
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>次类别</label>
+        <input ng-model="secondclass">
+      </md-input-container>
+
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>用途</label>
+        <input ng-model="apply">
+      </md-input-container>
+
+      <md-input-container class="md-block" flex-gt-sm>
+      <label>参数</label>
+      <input ng-model="parameter">
+    </md-input-container>
 
 
+    <div>
+      <input type="file" file-model="myFile" enctype="multipart/form-data">
+    </div>
+    <md-button class="md-raised" ng-click="add()">添加</md-button>
+    </div>
+  </div>
+
+
+
+
+    <!-- <div id="editor">
+        <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
+    </div> -->
+    <!-- <form name="input" action="http://10.134.45.94:8080/ProductCenter/uploadImage" enctype="multipart/form-data" method="post">
+  Username: <input type="file" name="file">
+  <input type="submit" value="Submit">
+  </form> -->
 <!-- <script type="text/javascript" src="/wangEditor.min.js"></script> -->
-
-
-
-
-
 </body>
-
-
 </html>
