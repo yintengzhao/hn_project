@@ -5,7 +5,7 @@
 #sys-title-logo {
 	width: 100%;
 	height: 10%;
-	padding-top: 5px;
+	// padding-top: 5px;
 }
 #pro-part{
 	width: 100%;
@@ -18,17 +18,44 @@
 	}
 	#all-pros{
 		width:75%;
-		height:95%;
+		height:100%;
 		// text-align:center;
 		// overflow-y:scroll;
 		// overflow-x:hidden;
+		#first-column{
+			width:50%;
+			text-align:center;
+			// margin-left:30px;
+			#eeee{
+				color:black;
+				text-align:center;
+				width:80%;
+				margin-bottom: 130px;
+				img{
+					margin-top:10px;
+					width:90%;
+					text-align:center;
+				}
+			}
+		}
+		#second-column{
+			 width:50%;
+			 text-align:center;
+			 #eeee{
+				 color:black;
+				 text-align:center;
+				 width:80%;
+				 margin-bottom:130px;
+				 img{
+					 width:90%;
+					 margin-top:10px;
+ 				}
+			 }
+		}
 	}
 	span{
 	text-align: center;
 	}
-}
-#virtual-part{
-	height: 4%
 }
 #bottom-word{
 	height:1%;
