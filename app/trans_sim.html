@@ -140,8 +140,14 @@
 
 
     <div id="file-box">
-      <label>点击上传图片</label>
-      <input id="file-btn" type="file" file-model="myFile" enctype="multipart/form-data">
+      <!-- <label>点击上传图片</label> -->
+      <input id="file-btn" type="file" file-model="myFile" enctype="multipart/form-data" onchange="angular.element(this).scope().img_upload(this.files)">
+      <div ng-repeat="item in thumb">
+          <label>
+              <img style="margin-left:50px;height:140px;width:250px" ng-src="{{item.imgSrc}}"/>
+          </label>
+          <ng-md-icon icon="delete_sweep" style="fill: ..." size="30px" ng-if="item.imgSrc" ng-click="img_del($index)"></ng-md-icon>
+      </div>
     </div>
     <md-button class="md-raised md-primary" id="add-btn" ng-click="add()">添加</md-button>
 

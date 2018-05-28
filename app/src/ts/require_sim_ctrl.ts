@@ -277,7 +277,7 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
         var workid={
                   method:'POST',
                   url:'http://10.134.45.94:8080/ProductCenter/showClass',
-                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                  params: {firstclass:"通讯控制";secondclass:"矿用隔爆兼本质安全型组合开关"},
                 }
                 $http(workid).then(function(response){
                   $scope.allpros_2 = response.data;
@@ -373,7 +373,7 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
         var workid={
                   method:'POST',
                   url:'http://10.134.45.94:8080/ProductCenter/showClass',
-                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                  params: {firstclass:"传感器";secondclass:""},
                 }
                 $http(workid).then(function(response){
                   $scope.allpros_2 = response.data;
@@ -401,7 +401,7 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
         var workid={
                   method:'POST',
                   url:'http://10.134.45.94:8080/ProductCenter/showClass',
-                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                  params: {firstclass:"变频器";secondclass:""},
                 }
                 $http(workid).then(function(response){
                   $scope.allpros_2 = response.data;
@@ -429,7 +429,7 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
         var workid={
                   method:'POST',
                   url:'http://10.134.45.94:8080/ProductCenter/showClass',
-                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                  params: {firstclass:"负荷中心";secondclass:""},
                 }
                 $http(workid).then(function(response){
                   $scope.allpros_2 = response.data;
@@ -458,7 +458,7 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
         var workid={
                   method:'POST',
                   url:'http://10.134.45.94:8080/ProductCenter/showClass',
-                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                  params: {firstclass:"支架电液";secondclass:"阀类产品"},
                 }
                 $http(workid).then(function(response){
                   $scope.allpros_2 = response.data;
@@ -475,7 +475,7 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
         var workid={
                   method:'POST',
                   url:'http://10.134.45.94:8080/ProductCenter/showClass',
-                  params: {firstclass:"组合开关类";secondclass:"矿用隔爆兼本质安全型组合开关"},
+                  params: {firstclass:"支架电液";secondclass:"电控产品"},
                 }
                 $http(workid).then(function(response){
                   $scope.allpros_2 = response.data;
