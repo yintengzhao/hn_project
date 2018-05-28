@@ -96,20 +96,6 @@
 
 
     <div id="add-tab">
-      <hr />
-
-      <div style="background-color:rgba(7, 8, 7, 0.21);border-radius:5px;text-align:center;font-size:28px;width:100%;">搜索产品</div>
-      <div id="search-tab" layout="column">
-        <div>
-          <md-input-container class="md-block" flex-gt-sm >
-            <label>在此键入关键字</label>
-            <input ng-model="the_max" style="width:100%;">
-            <md-button class="md-raised" ng-click="search_pro()">搜索</md-button>
-          </md-input-container>
-        </div>
-      </div>
-
-
       <div style="background-color:rgba(7, 8, 7, 0.21);border-radius:5px;text-align:center;font-size:28px">添加产品</div>
       <md-input-container class="md-block" flex-gt-sm>
         <label>型号</label>
@@ -126,17 +112,18 @@
         <input ng-model="secondclass">
       </md-input-container>
 
-      <md-input-container class="md-block" flex-gt-sm>
-        <label>用途</label>
-        <textarea ng-model="apply"></textarea>
+      <div>
+        <label style="color:gray">用途</label><br />
+        <textarea ng-model="apply" style="height:150px;width:100%"></textarea>
         <!-- <input ng-model="apply"> -->
-      </md-input-container>
+      </div>
 
-      <md-input-container class="md-block" flex-gt-sm>
-      <label>参数</label>
-      <textarea ng-model="parameter"></textarea>
-      <!-- <input ng-model="parameter"> -->
-    </md-input-container>
+      <div>
+        <label style="color:gray">参数</label><br />
+        <textarea ng-model="parameter" style="height:150px;width:100%"></textarea>
+        <!-- <input ng-model="parameter"> -->
+      </div>
+
 
 
     <div id="file-box">
@@ -152,6 +139,18 @@
     <md-button class="md-raised md-primary" id="add-btn" ng-click="add()">添加</md-button>
 
 
+    </div>
+    <div id="search-tab">
+      <div style="background-color:rgba(7, 8, 7, 0.21);border-radius:5px;text-align:center;font-size:28px;width:100%;">搜索产品</div>
+      <div  layout="column">
+        <div>
+          <md-input-container class="md-block" flex-gt-sm >
+            <label>在此键入关键字</label>
+            <input ng-model="the_max" style="width:100%;">
+            <md-button class="md-raised" ng-click="search_pro()">搜索</md-button>
+          </md-input-container>
+        </div>
+      </div>
     </div>
   </div>
   <div id="bottom-word">

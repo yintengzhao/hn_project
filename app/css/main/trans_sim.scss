@@ -107,7 +107,7 @@
 	}
 	#add-tab{
 		width: 18%;
-		margin-left: 10%;
+		margin-left: 1%;
 		margin-top: 10px;
 		#add-btn{
 			position: absolute;
@@ -119,7 +119,10 @@
 	}
 }
 #search-tab{
-	width: 93%;
+	width: 18%;
+	margin-top: 10px;
+	margin-left: 20px;
+
 	.md-raised{
 		width: 100%;
 		font-size: 25px;
