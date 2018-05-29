@@ -30,7 +30,7 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
       Array(DATA_NUM).join(1).split('').map(function() { return 0; }),
     ];
     $scope.onClick = function(points, evt) {
-      console.log(points, evt);
+      // console.log(points, evt);
     };
     $scope.colors = ['#FF5C00', '#167BAC'];
     $scope.colors2 = ['#10BE1C'];
@@ -84,7 +84,6 @@ $scope.add=function(){
                                     $scope.allpros = response.data;
                                   });
                       },function(){
-                        // alert('err');
                         $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
                                   .then(function(response) {
                                     for(let ma of response.data){

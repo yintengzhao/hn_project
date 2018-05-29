@@ -36,7 +36,6 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
       $scope.allpros_2=[];
       $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
                 .then(function(response) {
-                  console.log(response);
                   $scope.allpros_2 = response.data;
                   while($scope.allpros_2>$scope.allpros_1){
                     $scope.allpros_1.push($scope.allpros_2.shift())
