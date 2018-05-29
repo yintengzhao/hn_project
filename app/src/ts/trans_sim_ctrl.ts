@@ -3,7 +3,7 @@ import { ng_app } from './ng_app';
 
 ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window', '$http', '$sce',
   function($scope, $interval, $timeout, $window, $http, $sce) {
-    var IpAdress:string="10.134.45.94";
+    var IpAdress:string="39.105.79.4";
 
 
     //time
@@ -59,7 +59,7 @@ $scope.add=function(){
   fd.append('file', file);
   var workid={
             method:'POST',
-            url:'http://10.134.45.94:8080/ProductCenter/uploadImage',
+            url:'http://'+IpAdress+':8080/ProductCenter/uploadImage',
             // params: { file: $scope.myFile },
             data: fd,
             headers: {'Content-Type':undefined},
@@ -71,7 +71,7 @@ $scope.add=function(){
               // 添加模块
               var workid={
                         method:'POST',
-                        url:'http://10.134.45.94:8080/ProductCenter/addProduct',
+                        url:'http://'+IpAdress+':8080/ProductCenter/addProduct',
                         params: {type:$scope.type;apply:$scope.apply;parameter:$scope.parameter;firstclass:$scope.firstclass;secondclass:$scope.secondclass;image:response.data.path},
                       }
                       $http(workid).then(function(response){
@@ -109,7 +109,7 @@ $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
 $scope.del_pro=function(proid){
   var workid={
     method:'POST',
-    url:'http://10.134.45.94:8080/ProductCenter/delProduct',
+    url:'http://'+IpAdress+':8080/ProductCenter/delProduct',
     params: { id: proid }
   };
   $http(workid).then(function(){
@@ -127,7 +127,7 @@ $scope.del_pro=function(proid){
 $scope.search_pro=function(){
   var workid={
     method:'POST',
-    url:'http://10.134.45.94:8080/ProductCenter/findbyWord',
+    url:'http://'+IpAdress+':8080/ProductCenter/findbyWord',
     params: { word: $scope.the_max };
   };
   $http(workid).then(function(response){
