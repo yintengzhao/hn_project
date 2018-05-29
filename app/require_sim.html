@@ -80,7 +80,10 @@
   <div id="eeee"  layout="column" ng-repeat="allpro in allpros_1" >
     <a href="watch_goods.html?id={{allpro.id}}">
     <img ng-src="http://{{allpro.image}}">
-    <span>{{allpro.type}}</span>
+    <div>
+      {{allpro.type}}
+    </div>
+    <!-- <span>{{allpro.type}}</span> -->
     </a>
   </div>
 </div>
@@ -89,7 +92,10 @@
 <div id="eeee" layout="column" ng-repeat="allpro in allpros_2">
   <a href="watch_goods.html?id={{allpro.id}}">
   <img ng-src="http://{{allpro.image}}" >
-  <span>{{allpro.type}}</span>
+  <div>
+    {{allpro.type}}
+  </div>
+  <!-- <span>{{allpro.type}}</span> -->
   </a>
 </div>
 </div>

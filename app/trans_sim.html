@@ -19,7 +19,7 @@
           <img src="assets/huaning-logo.png">
         </div>
       </div>
-      <div id="sys-title"><strong>产品展示后台管理系统</strong></div>
+      <h1 style="color:white">产品展示后台管理系统</h1>
 
       <div id="sys-date-bar">
         <div>
@@ -58,7 +58,7 @@
           <thead>
             <tr>
               <th>序号</th>
-              <th style="width:200px">机器型号</th>
+              <th>机器型号</th>
               <th>主类别</th>
               <th>次类别</th>
               <th>用途</th>
@@ -114,13 +114,13 @@
 
       <div>
         <label style="color:gray">用途</label><br />
-        <textarea ng-model="apply" style="height:150px;width:100%"></textarea>
+        <textarea id="apply" ng-model="apply"></textarea>
         <!-- <input ng-model="apply"> -->
       </div>
 
       <div>
         <label style="color:gray">参数</label><br />
-        <textarea ng-model="parameter" style="height:150px;width:100%"></textarea>
+        <textarea id="parameter" ng-model="parameter"></textarea>
         <!-- <input ng-model="parameter"> -->
       </div>
 
@@ -131,7 +131,7 @@
       <input id="file-btn" type="file" file-model="myFile" enctype="multipart/form-data" onchange="angular.element(this).scope().img_display(this.files)">
       <div ng-repeat="item in thumb">
           <label>
-              <img style="margin-left:50px;height:140px;width:250px" ng-src="{{item.imgSrc}}"/>
+              <img ng-src="{{item.imgSrc}}"/>
           </label>
           <ng-md-icon icon="delete_sweep" style="fill: ..." size="30px" ng-if="item.imgSrc" ng-click="img_del($index)"></ng-md-icon>
       </div>
@@ -153,20 +153,6 @@
       </div>
     </div>
   </div>
-  <div id="bottom-word">
-      Copyright 2018-2020 All Rights Reserved     天津华宁电子有限公司
-  </div>
 
-
-
-
-    <!-- <div id="editor">
-        <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
-    </div> -->
-    <!-- <form name="input" action="http://10.134.45.94:8080/ProductCenter/uploadImage" enctype="multipart/form-data" method="post">
-  Username: <input type="file" name="file">
-  <input type="submit" value="Submit">
-  </form> -->
-<!-- <script type="text/javascript" src="/wangEditor.min.js"></script> -->
 </body>
 </html>
