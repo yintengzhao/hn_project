@@ -399,7 +399,7 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
         $scope.allpros_2=[];
         var workid={
                   method:'POST',
-                  url:'http://'+IpAdress+':8080/ProductCenter/showClass',
+                  url:'http://'+IpAdress+':8080/ProductCenter/showFirstclass',
                   params: {firstclass:"变频器"},
                 }
                 $http(workid).then(function(response){
