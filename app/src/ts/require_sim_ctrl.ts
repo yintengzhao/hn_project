@@ -3,12 +3,22 @@ import { ng_app } from './ng_app';
 
 ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window', '$http', '$sce',
   function($scope, $interval, $timeout, $window, $http, $sce) {
-    var IpAdress:string="39.105.79.4";
+    var Ip_Flag=true;
+    var IpAdress:string
+    if(Ip_Flag==true){
+      var IpAdress:string="39.105.79.4";
+    }
+    else{
+      var IpAdress:string="10.134.41.175";
+    }
     $scope.allpros_flag=true
     // 展示所有商品
     $scope.allpros_1=[];
     $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
               .then(function(response) {
+                for(let ma of response.data){
+                  ma.image=ma.image.split("image/")[0]+"image/thumb_"+ma.image.split("image/")[1];
+                }
                 console.log(response);
                 $scope.allpros_2 = response.data;
                 while($scope.allpros_2>$scope.allpros_1){
