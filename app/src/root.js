@@ -75,10 +75,14 @@ require.config({
     }
 });
 
-
+// require(['require_sim_ctrl'])
 require([
   'main_ctrl',
   'require_sim_ctrl',
   'watch_goods_ctrl',
   'trans_sim_ctrl',
-])
+],
+function(){
+  angular.bootstrap(document.getElementsByTagName("body")[0], ['fmid']);
+}
+)

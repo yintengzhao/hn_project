@@ -186,5 +186,3 @@ $scope.reader = new FileReader();   //创建一个FileReader接口
         delete $scope.form.image[guidArr[key]];
     };
 }])
-
-angular.bootstrap(document.getElementsByTagName("body")[0], ['fmid']);

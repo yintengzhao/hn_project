@@ -16,7 +16,7 @@ let ng_app = angular.module(
     'ngMdIcons',
     // 'ngResource',
     // 'ngMessages',
-    'chart.js'
+    'chart.js',
   ]
 )
 
