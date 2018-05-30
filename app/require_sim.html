@@ -74,7 +74,17 @@
 <!-- 第一列 -->
 <div id="first-column" layout="column">
   <md-content>
-  <div id="eeee"  layout="row" ng-repeat="allpro in allpros_1" ng-repeat="allpro in allpros_2">
+    <div id="eeee" ng-repeat="pros in test" layout="row">
+      <div id="ffff" ng-repeat="pro in pros" layout="column">
+        <a href="watch_goods.html?id={{pro.id}}" id="first_href">
+        <img ng-src="http://{{pro.image}}">
+        <div>
+          {{pro.type}}
+        </div>
+        </a>
+      </div>
+    </div>
+  <!-- <div id="eeee"  layout="row" ng-repeat="allpro in allpros_1" ng-repeat="allpr in allpros_2">
     <a href="watch_goods.html?id={{allpro.id}}" id="first_href">
     <img ng-src="http://{{allpro.image}}">
     <div>
@@ -87,7 +97,7 @@
       {{allpro.type}}
     </div>
     </a>
-  </div>
+  </div> -->
   </md-content>
 </div>
 

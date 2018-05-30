@@ -14,17 +14,29 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
     $scope.allpros_flag=true
     // 展示所有商品
     $scope.allpros_1=[];
+    $scope.test=[];
+
     $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
               .then(function(response) {
                 for(let ma of response.data){
                   ma.image=ma.image.split("image/")[0]+"image/thumb_"+ma.image.split("image/")[1];
                 }
-                console.log(response);
                 $scope.allpros_2 = response.data;
-                while($scope.allpros_2>$scope.allpros_1){
-                  $scope.allpros_1.push($scope.allpros_2.shift())
+                console.log($scope.allpros_2.length);
+                $scope.test=[];
+                for(var i=0;i<$scope.allpros_2.length;i+=2){
+                  $scope.test.push($scope.allpros_2.slice(i,i+2));
                 }
-                console.log($scope.allpros_2,$scope.allpros_1)
+                // while($scope.allpros_2.length>1){
+                //   $scope.test.push($scope.allpros_2.shift());
+                //   $scope.test.push($scope.allpros_2.shift());
+                //
+                //   $scope.allpros_1.push(test);
+                //   $scope.test=[];
+                //   console.log($scope.allpros_1);
+                //
+                // }
+                console.log($scope.test);
               });
 
 
