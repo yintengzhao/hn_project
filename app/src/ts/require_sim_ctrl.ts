@@ -22,21 +22,10 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
                   ma.image=ma.image.split("image/")[0]+"image/thumb_"+ma.image.split("image/")[1];
                 }
                 $scope.allpros_2 = response.data;
-                console.log($scope.allpros_2.length);
                 $scope.test=[];
                 for(var i=0;i<$scope.allpros_2.length;i+=2){
                   $scope.test.push($scope.allpros_2.slice(i,i+2));
                 }
-                // while($scope.allpros_2.length>1){
-                //   $scope.test.push($scope.allpros_2.shift());
-                //   $scope.test.push($scope.allpros_2.shift());
-                //
-                //   $scope.allpros_1.push(test);
-                //   $scope.test=[];
-                //   console.log($scope.allpros_1);
-                //
-                // }
-                console.log($scope.test);
               });
 
 
@@ -63,10 +52,10 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
                   }
 
                   $scope.allpros_2 = response.data;
-                  while($scope.allpros_2>$scope.allpros_1){
-                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  $scope.test=[];
+                  for(var i=0;i<$scope.allpros_2.length;i+=2){
+                    $scope.test.push($scope.allpros_2.slice(i,i+2));
                   }
-                  console.log($scope.allpros_2,$scope.allpros_1)
                 });
 
 
@@ -96,9 +85,10 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
 
 
                   $scope.allpros_2 = response.data;
-                  while($scope.allpros_2>$scope.allpros_1){
-                    $scope.allpros_1.push($scope.allpros_2.shift())
-                  };
+                  $scope.test=[];
+                  for(var i=0;i<$scope.allpros_2.length;i+=2){
+                    $scope.test.push($scope.allpros_2.slice(i,i+2));
+                  }
                   $scope.allpros_flag=true;
                   $scope.first_flag=false;
                 },function(){});
@@ -117,9 +107,10 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
                   }
 
                   $scope.allpros_2 = response.data;
-                  while($scope.allpros_2>$scope.allpros_1){
-                    $scope.allpros_1.push($scope.allpros_2.shift())
-                  };
+                  $scope.test=[];
+                  for(var i=0;i<$scope.allpros_2.length;i+=2){
+                    $scope.test.push($scope.allpros_2.slice(i,i+2));
+                  }
                   $scope.allpros_flag=true;
                   $scope.first_flag=false;
                 },function(){});
@@ -139,9 +130,10 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
 
 
                   $scope.allpros_2 = response.data;
-                  while($scope.allpros_2>$scope.allpros_1){
-                    $scope.allpros_1.push($scope.allpros_2.shift())
-                  };
+                  $scope.test=[];
+                  for(var i=0;i<$scope.allpros_2.length;i+=2){
+                    $scope.test.push($scope.allpros_2.slice(i,i+2));
+                  }
                   $scope.allpros_flag=true;
                   $scope.first_flag=false;
                 },function(){});
@@ -161,8 +153,9 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
 
 
                   $scope.allpros_2 = response.data;
-                  while($scope.allpros_2>$scope.allpros_1){
-                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  $scope.test=[];
+                  for(var i=0;i<$scope.allpros_2.length;i+=2){
+                    $scope.test.push($scope.allpros_2.slice(i,i+2));
                   };
                   $scope.allpros_flag=true;
                   $scope.first_flag=false;
@@ -183,9 +176,10 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
 
 
                   $scope.allpros_2 = response.data;
-                  while($scope.allpros_2>$scope.allpros_1){
-                    $scope.allpros_1.push($scope.allpros_2.shift())
-                  };
+                  $scope.test=[];
+                  for(var i=0;i<$scope.allpros_2.length;i+=2){
+                    $scope.test.push($scope.allpros_2.slice(i,i+2));
+                  }
                   $scope.allpros_flag=true;
                   $scope.first_flag=false;
                 },function(){});
@@ -205,9 +199,10 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
 
 
                   $scope.allpros_2 = response.data;
-                  while($scope.allpros_2>$scope.allpros_1){
-                    $scope.allpros_1.push($scope.allpros_2.shift())
-                  };
+                  $scope.test=[];
+                  for(var i=0;i<$scope.allpros_2.length;i+=2){
+                    $scope.test.push($scope.allpros_2.slice(i,i+2));
+                  }
                   $scope.allpros_flag=true;
                   $scope.first_flag=false;
                 },function(){});
@@ -239,8 +234,9 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
 
 
                   $scope.allpros_2 = response.data;
-                  while($scope.allpros_2>$scope.allpros_1){
-                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  $scope.test=[];
+                  for(var i=0;i<$scope.allpros_2.length;i+=2){
+                    $scope.test.push($scope.allpros_2.slice(i,i+2));
                   };
                   $scope.allpros_flag=true;
                   $scope.second_flag=false;
@@ -261,8 +257,9 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
 
 
                   $scope.allpros_2 = response.data;
-                  while($scope.allpros_2>$scope.allpros_1){
-                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  $scope.test=[];
+                  for(var i=0;i<$scope.allpros_2.length;i+=2){
+                    $scope.test.push($scope.allpros_2.slice(i,i+2));
                   };
                   $scope.allpros_flag=true;
                   $scope.second_flag=false;
@@ -283,8 +280,9 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
 
 
                   $scope.allpros_2 = response.data;
-                  while($scope.allpros_2>$scope.allpros_1){
-                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  $scope.test=[];
+                  for(var i=0;i<$scope.allpros_2.length;i+=2){
+                    $scope.test.push($scope.allpros_2.slice(i,i+2));
                   };
                   $scope.allpros_flag=true;
                   $scope.second_flag=false;
@@ -306,8 +304,9 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
 
 
                   $scope.allpros_2 = response.data;
-                  while($scope.allpros_2>$scope.allpros_1){
-                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  $scope.test=[];
+                  for(var i=0;i<$scope.allpros_2.length;i+=2){
+                    $scope.test.push($scope.allpros_2.slice(i,i+2));
                   };
                   $scope.allpros_flag=true;
                   $scope.second_flag=false;
@@ -328,8 +327,9 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
 
 
                   $scope.allpros_2 = response.data;
-                  while($scope.allpros_2>$scope.allpros_1){
-                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  $scope.test=[];
+                  for(var i=0;i<$scope.allpros_2.length;i+=2){
+                    $scope.test.push($scope.allpros_2.slice(i,i+2));
                   };
                   $scope.allpros_flag=true;
                   $scope.second_flag=false;
@@ -427,8 +427,9 @@ ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window
                   }
 
                   $scope.allpros_2 = response.data;
-                  while($scope.allpros_2>$scope.allpros_1){
-                    $scope.allpros_1.push($scope.allpros_2.shift())
+                  $scope.test=[];
+                  for(var i=0;i<$scope.allpros_2.length;i+=2){
+                    $scope.test.push($scope.allpros_2.slice(i,i+2));
                   };
                   $scope.allpros_flag=true;
                   $scope.third_flag=false;
