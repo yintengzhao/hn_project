@@ -19,13 +19,20 @@
 				height:100%;
 
 				#first-column{
-					width:50%;
+					width:100%;
 					text-align:center;
 					#eeee{
 						color:black;
 						text-align:center;
-						width:80%;
-						margin-bottom: 400px;
+						width:100%;
+						margin-bottom: 100px;
+						#first_href{
+							width: 50%;
+						}
+						#second_href{
+							width: 50%;
+
+						}
 						img{
 							height: 300px;
 							margin-top:10px;
@@ -34,21 +41,7 @@
 						}
 					}
 				}
-				#second-column{
-					 width:50%;
-					 text-align:center;
-					 #eeee{
-						 color:black;
-						 text-align:center;
-						 width:80%;
-						 margin-bottom:400px;
-						 img{
-							 height: 300px;
-							 width:80%;
-							 margin-top:10px;
-		 				}
-					 }
-				}
+
 			}
 			span{
 			text-align: center;
