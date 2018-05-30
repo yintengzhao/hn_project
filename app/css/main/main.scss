@@ -1,54 +1,109 @@
 #main{
+  @media screen and (max-width: 1200px){
+    #title{
+      text-align: center;
+      width: 100%;
+      // padding-top: 120px;
+    }
 
-#title{
-  text-align: center;
-  width: 100%;
-  padding-top: 120px;
-}
+    #sys-title-logo {
+      margin: 0 auto;
+    	width: 80%;
+    	padding-top: 16px;
+    }
 
-#sys-title-logo {
-  margin: 0 auto;
-	width: 720px;
-	padding-top: 16px;
-}
+    #logo {
+    	display: inline-block;
 
-#logo {
-	display: inline-block;
+    	img {
+    		width: 90%;
+    	}
+    }
 
-	img {
-		width: 400px;
-	}
-}
+    #sys-title {
+    	color: black;
+    	display: inline-block;
+    	vertical-align: top;
+    	font-size: 25px;
+      width: 100%
+    }
 
-#sys-title {
-	color: black;
-	display: inline-block;
-	vertical-align: top;
-	font-size: 60px;
-  width: 100%
-}
+    #modules{
+      width: 100%;
+      margin: 32px auto;
+      text-align: center;
+    }
 
-#modules{
-  width: 1280px;
-  margin: 32px auto;
-  text-align: center;
-}
+    .module{
+      display: inline-block;
+      width: 50%;
+      height: 72px;
+      border-radius: 12px;
+      margin-top: 10%;
+      // margin-right: 48px;
+      // margin: 0 32px;
+      line-height: 72px;
+      font-size: 32px;
+      color: white;
 
-.module{
-  display: inline-block;
-  width: 280px;
-  height: 72px;
-  border-radius: 12px;
-  // margin-right: 48px;
-  margin: 0 32px;
-  line-height: 72px;
-  font-size: 32px;
-  color: white;
+      &.red{background-color: rgb(96, 33, 52);}
+      &.yellow{background-color: rgb(193, 174, 46);}
+      &.blue{background-color: rgb(42, 82, 134);}
+    }
+  }
+  @media screen and (min-width: 1200px){
+    #title{
+      text-align: center;
+      width: 100%;
+      padding-top: 120px;
+    }
 
-  &.red{background-color: rgb(96, 33, 52);}
-  &.yellow{background-color: rgb(193, 174, 46);}
-  &.blue{background-color: rgb(42, 82, 134);}
-}
+    #sys-title-logo {
+      margin: 0 auto;
+    	width: 720px;
+    	padding-top: 16px;
+    }
+
+    #logo {
+    	display: inline-block;
+
+    	img {
+    		width: 400px;
+    	}
+    }
+
+    #sys-title {
+    	color: black;
+    	display: inline-block;
+    	vertical-align: top;
+    	font-size: 60px;
+      width: 100%
+    }
+
+    #modules{
+      width: 1280px;
+      margin: 32px auto;
+      text-align: center;
+    }
+
+    .module{
+      display: inline-block;
+      width: 280px;
+      height: 72px;
+      border-radius: 12px;
+      // margin-right: 48px;
+      margin: 0 32px;
+      line-height: 72px;
+      font-size: 32px;
+      color: white;
+
+      &.red{background-color: rgb(96, 33, 52);}
+      &.yellow{background-color: rgb(193, 174, 46);}
+      &.blue{background-color: rgb(42, 82, 134);}
+    }
+  }
+
+
 
 
 
