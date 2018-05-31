@@ -12,12 +12,10 @@
 </head>
 
 <body ng-controller="WatchGoodsCtrl" id="watch_goods" ng-class="" ng-cloak>
-  <div id="sys-title-logo" >
-    <div id="logo">
-      <img src="assets/huaning-logo.png">
-    </div>
-    <div id="sys-title"><strong>产品详情</strong></div>
-  </div>
+ <span class="class">{{allpros.firstclass}}------>{{allpros.secondclass}}</span><br />
+ <span>
+   ------>{{allpros.type}}
+ </span>
 <!-- <hr/> -->
 <md-divider style="color:gray"></md-divider>
 
@@ -26,8 +24,6 @@
 </div>
 <md-content>
 <p class="attr-value">
-  【机器型号】： <span class="type">{{allpros.type}}</span><br>
-  【产品类别】： <span class="class">{{allpros.firstclass}}------>{{allpros.secondclass}}</span><br>
   【用途】： <span class="apply">{{allpros.apply}}</span><br>
   【参数】： <span class="parameter">{{allpros.parammeter}}</span><br>
 </p>

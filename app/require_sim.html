@@ -34,35 +34,34 @@
     <md-button style="width:100%" ng-click="sixth()">支架电液</md-button>
   </div>
   <!-- 二级产品列表 -->
-  <div style="color:black;text-align:center;width:65%;height:60%;background-color:rgba(0, 0, 0, 0.13)" ng-show="first_flag">
-    <md-button style="width:100%" ng-click="first_1()" >2-4矿用隔爆兼本质安全型</md-button>
-    <md-button style="width:100%" ng-click="first_2()">4-6矿用隔爆兼本质安全型</md-button>
-    <md-button style="width:100%" ng-click="first_3()">6-8矿用隔爆兼本质安全型</md-button>
-    <md-button style="width:100%" ng-click="first_4()">9-10矿用隔爆兼本质安全型</md-button>
-    <md-button style="width:100%" ng-click="first_5()">9-12矿用隔爆兼本质安全型</md-button>
-    <md-button style="width:100%" ng-click="first_6()">8-9卧式矿用隔爆兼本质安全型</md-button>
+  <div ng-show="first_flag" id="second-class">
+    <div id="ppp"  ng-click="first_1()">2-4组合隔爆兼本质安全型</div>
+    <div id="ppp" ng-click="first_2()">4-6矿用隔爆兼本质安全型</div>
+    <div id="ppp" ng-click="first_3()">6-8矿用隔爆兼本质安全型</div>
+    <div id="ppp" ng-click="first_4()">9-10矿用隔爆兼本质安全型</div>
+    <div id="ppp" ng-click="first_5()">9-12矿用隔爆兼本质安全型</div>
+    <div id="ppp" ng-click="first_6()">8-9卧式矿用隔爆兼本质安全型</div>
   </div>
-  <div style="color:black;text-align:center;width:55%;height:70%;background-color:rgba(0, 0, 0, 0.13)" ng-show="second_flag">
-    <md-button style="width:100%" ng-click="second_1()">KTC101系列组合扩音电话</md-button>
-    <md-button style="width:100%" ng-click="second_2()">KTC102系列组合扩音电话</md-button>
-    <md-button style="width:100%" ng-click="second_3()">急停闭锁开关</md-button>
-    <md-button style="width:100%" ng-click="second_4()">控制器</md-button>
-    <md-button style="width:100%" ng-click="second_5()">多功能终端</md-button>
-    <md-button style="width:100%" ng-click="second_6()">电源</md-button>
-    <md-button style="width:100%" ng-click="second_7()">输入输出</md-button>
+  <div ng-show="second_flag" id="second-class">
+    <div id="ppp" ng-click="second_1()">KTC101系列组合扩音电话</div>
+    <div id="ppp" ng-click="second_2()">KTC102系列组合扩音电话</div>
+    <div id="ppp" ng-click="second_3()">急停闭锁开关</div>
+    <div id="ppp" ng-click="second_4()">控制器</div>
+    <div id="ppp" ng-click="second_5()">多功能终端</div>
+    <div id="ppp" ng-click="second_6()">电源</div>
+    <div id="ppp" ng-click="second_7()">输入输出</div>
+  </div>
+  <div ng-show="third_flag" id="second-class">
+    <div id="ppp" ng-click="third_1()">速度传感器CSC6</div>
+    <div id="ppp" ng-click="third_2()">堆煤传感器GUD-330</div>
+    <div id="ppp" ng-click="third_3()">跑偏传感器GEJ-15</div>
+    <div id="ppp" ng-click="third_4()">温度传感器GWM-45</div>
+    <div id="ppp" ng-click="third_5()">烟雾传感器GQL0.1</div>
+  </div>
 
-  </div>
-  <div style="color:black;text-align:center;width:50%;height:50%;background-color:rgba(0, 0, 0, 0.13)" ng-show="third_flag">
-    <md-button style="width:100%" ng-click="third_1()">速度传感器CSC6</md-button>
-    <md-button style="width:100%" ng-click="third_2()">堆煤传感器GUD-330</md-button>
-    <md-button style="width:100%" ng-click="third_3()">跑偏传感器GEJ-15</md-button>
-    <md-button style="width:100%" ng-click="third_4()">温度传感器GWM-45</md-button>
-    <md-button style="width:100%" ng-click="third_5()">烟雾传感器GQL0.1</md-button>
-  </div>
-
-  <div style="color:black;text-align:center;width:25%;height:20%;background-color:rgba(0, 0, 0, 0.13)" ng-show="sixth_flag">
-    <md-button style="width:100%" ng-click="sixth_1()">阀类产品</md-button>
-    <md-button style="width:100%" ng-click="sixth_2()">电控产品</md-button>
+  <div ng-show="sixth_flag" id="second-class">
+    <div id="ppp" ng-click="sixth_1()">阀类产品</div>
+    <div id="ppp" ng-click="sixth_2()">电控产品</div>
   </div>
 
 
@@ -75,7 +74,7 @@
         <a href="watch_goods.html?id={{pro.id}}" id="first_href">
         <img ng-src="http://{{pro.image}}">
         <div>
-          {{pro.type}}
+          <strong>{{pro.type}}</strong>
         </div>
         </a>
       </div>

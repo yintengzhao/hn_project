@@ -11,6 +11,11 @@ else {
   var IpAdress: string = "10.134.41.175";
 }
 $scope.allpros_flag = true
+
+
+window.addEventListener("popstate",function(e){
+  alert('sdsjjfjk');
+})
 // 展示所有商品
 $scope.allpros_1 = [];
 $scope.test = [];

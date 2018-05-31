@@ -19,17 +19,7 @@
           <img src="assets/huaning-logo.png">
         </div>
       </div>
-      <div id="sys-title" style="color:white">产品展示后台管理系统</div>
-
-      <div id="sys-date-bar">
-        <div>
-          <div id="date-show" class="md-display-1">{{nowtime|date:'yyyy年MM月dd日'}}</div>
-        </div>
-        <div>
-          <div id="emmmmmm" class="md-display-1">爱国 敬业 诚信 友善</div>
-        </div>
-      </div>
-
+      <div id="sys-title" style="color:white"><strong>产品展示后台管理系统</strong></div>
       <!--钟表-->
       <div id="sys-time" class="diginum">
         <div class="frnum">{{nowtime|date:'HH:mm:ss'}}</div>
@@ -78,14 +68,14 @@
               <td>{{pro.parameter}}</td>
               <td>
                 <a href="http://{{pro.image}}">
-                  <ng-md-icon icon="photo" style="fill: ..." size="30px"></ng-md-icon>
+                  <ng-md-icon icon="photo" style="fill: ...;cursor:pointer" size="30px"></ng-md-icon>
                 </a>
               </td>
               <td>
-                <ng-md-icon icon="edit" style="fill: ..." size="30px" ng-click=update_inventory(inventory.name,inventory.num,inventory.safenum,inventory.islandnum,inventory.zone,inventory.id)></ng-md-icon>
+                <ng-md-icon icon="edit" style="fill: ...;cursor:pointer" size="30px" ng-click=update_inventory(inventory.name,inventory.num,inventory.safenum,inventory.islandnum,inventory.zone,inventory.id)></ng-md-icon>
               </td>
               <td>
-                <ng-md-icon icon="delete_sweep" style="fill: ..." size="30px" ng-click="del_pro(pro.id)"></ng-md-icon>
+                <ng-md-icon icon="delete_sweep" style="fill: ...;cursor:pointer" size="30px" ng-click="del_pro(pro.id)"></ng-md-icon>
               </td>
             </tr>
           </tbody>
