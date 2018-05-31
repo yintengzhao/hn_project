@@ -32,7 +32,7 @@
 		color: white;
 		display: inline-block;
 		vertical-align: top;
-		font-size: 36px;
+		font-size: 22px;
 		margin-top: 20px;
 	}
 	#sys-date-bar{
@@ -40,13 +40,13 @@
 	}
 	#date-show {
 		color: white;
-		font-size: 24px;
+		font-size: 16px;
 		text-align: center;
 	}
 
 	#emmmmmm {
 		padding: 0 24px;
-		font-size: 28px;
+		font-size: 18px;
 		font-weight: 600;
 		color: rgb(234, 238, 187);
 		background: linear-gradient(to bottom, #f2f2f2 0%,#e86c57 43%,#630021 100%);
@@ -96,27 +96,55 @@
 	#middle-part {
 		width: 100%;
 		margin-top: 10px;
-		height: 88%;
+		height: 93%;
 		background-color: #B0BEC5;
+		md-content{
+			height:97%
+		}
 		#pro-table{
-			width: 60%;
+			width: 80%;
 			margin-left: 10px;
 			margin-top: 10px;
 			table{
 				width: 100%;
 			}
 		}
+		#geshi{
+			height:100%;
+		}
 		#add-tab{
-			width: 18%;
+			width: 90%;
+			height: 51%;
 			margin-left: 1%;
 			margin-top: 10px;
+			#file-box{
+				display: inline-block;
+				color: gray;
+				font-size: 18px;
+				height:22%;
+				#file-btn{
+					width: 100%;
+					color: yellow;
+					background-color: rgb(144, 22, 22);
+				}
+				div{
+					height: 100%;
+					img{
+						margin-left:0%;
+						height:75%;
+						width: 75%;
+					}
+				}
+			}
+
 			#add-btn{
 				position: relative;
-				margin-bottom: 0px;
+				margin-bottom: 10px;
 				width: 95%;
 				height: 5%;
 				font-size: 28px;
 			}
+
 		}
 		#apply{
 			width: 100%;
@@ -129,42 +157,21 @@
 
 	}
 	#search-tab{
-		width: 18%;
+		width: 85%;
 		margin-top: 10px;
 		margin-left: 20px;
 
 		.md-raised{
-			width: 100%;
+			width: 90%;
 			font-size: 25px;
 		}
 	}
-	#file-box{
-		display: inline-block;
-		color: gray;
-		font-size: 18px;
-		height: 25%;
-		div{
-			height: 90%;
-			img{
-				margin-left:0%;
-				height:90%;
-				width: 80%;
-				// width:250px
-			}
-		}
 
-	}
-	#file-btn{
-		// height: 40px;
-		width: 100%;
-		color: yellow;
-		background-color: rgb(144, 22, 22);
-	}
 	#bottom-word{
 		height:1%;
 		position:relative;
 		color:white;
-		font-size:15px;
+		font-size:13px;
 		left:0;
 		right:0;
 		bottom:0px;
@@ -174,7 +181,7 @@
 @media screen and (min-width: 1850px){
 	#sys-title-logo {
 		width: 16%;
-		padding-top: 16px;
+		padding-top: 12px;
 	}
 
 	#logo {
@@ -257,16 +264,23 @@
 		margin-top: 10px;
 		height: 88%;
 		background-color: #B0BEC5;
+		md-content{
+			height:94%;
+		}
 		#pro-table{
-			width: 60%;
+			width: 65%;
 			margin-left: 10px;
 			margin-top: 10px;
 			table{
 				width: 100%;
 			}
 		}
+		#geshi{
+			width: 35%;
+
+		}
 		#add-tab{
-			width: 18%;
+			width: 48%;
 			margin-left: 1%;
 			margin-top: 10px;
 			#add-btn{
@@ -288,7 +302,7 @@
 
 	}
 	#search-tab{
-		width: 18%;
+		width: 45%;
 		margin-top: 10px;
 		margin-left: 20px;
 
