@@ -22,4 +22,14 @@ var workid={
           $scope.allpros = response.data;
         },function(){});
 
+
+        $scope.go_back = function() {
+      //$ionicHistory.forwardView();
+		$ionicHistory.goBack();
+       //alert(111);
+	};
+
+  window.addEventListener("popstate",function(e){
+    alert('sdsjjfjk');
+  })
 }

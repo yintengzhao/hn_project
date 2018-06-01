@@ -106,7 +106,7 @@ $scope.add=function(){
 $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
           .then(function(response) {
             for(let ma of response.data){
-              ma.apply=ma.apply.substring(0,30)
+              ma.apply=ma.apply.substring(0,20)
             }
             $scope.allpros = response.data;
           });
@@ -140,9 +140,14 @@ $scope.search_pro=function(){
       ma.apply=ma.apply.substring(0,30)
     }
     $scope.allpros = response.data;    },function(){})
-
 }
-
+//列表模块
+$scope.dis_second_class=function(){
+  $scope.second_class_flag=true;
+}
+$scope.hide_second_class=function(){
+  $scope.second_class_flag=false;
+}
 
 
 

@@ -28,21 +28,28 @@
       <!--chart-->
       <div id="sys-monitor">
         <div class="sub-chart">
-          <canvas class="chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-colors="colors">
-          </canvas>
+          <md-input-container class="md-block">
+            <label>在此键入关键字</label>
+            <input  ng-model="the_max" style="width:100%;">
+          </md-input-container>
         </div>
-        <div class="sub-chart">
-          <canvas class="chart-line" chart-data="data2" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride2" chart-colors="colors2">
-          </canvas>
-        </div>
+        <ng-md-icon icon="search" style="fill:red;cursor:pointer" size="40px" ng-click="search_pro()"></ng-md-icon>
+        <!-- <md-button class="md-raised md-warn" >搜索</md-button> -->
+      </div>
+      <div id="login">
+        <md-button ng-click="" style="font-size:20px">登录</md-button>/
+        <md-button ng-click="" style="font-size:20px">注册</md-button>
       </div>
 
     </div>
   </div>
 
   <div id="middle-part" layout="row">
+    <div id="pro-class">
+      <div id="middle-part-btn" ng-mouseenter="dis_second_class()" ng-mouseleave="hide_second_class()">主类别</div>
+    </div>
     <div id="pro-table">
-      <div style="background-color:pink;border-radius:5px;text-align:center;font-size:28px">产品信息</div>
+      <div id="nav-bar">产品信息</div>
       <md-content >
         <table class="watch-table">
           <thead>
@@ -59,8 +66,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="pro in allpros">
-              <td>{{pro.id}}</td>
+            <tr ng-repeat="pro in allpros track by $index">
+              <td>{{$index+1}}</td>
               <td>{{pro.type}}</td>
               <td>{{pro.firstclass}}</td>
               <td>{{pro.secondclass}}</td>
@@ -84,10 +91,10 @@
     </div>
 
 
-<div id="geshi" layout="row" layout-xs="column" layout-md="column">
+<div id="geshi">
 
     <div id="add-tab">
-      <div style="background-color:rgba(7, 8, 7, 0.21);border-radius:5px;text-align:center;font-size:28px">添加产品</div>
+      <div id="nav-bar">添加产品</div>
       <md-input-container class="md-block" flex-gt-sm>
         <label>型号</label>
         <input ng-model="type">
@@ -115,10 +122,7 @@
         <!-- <input ng-model="parameter"> -->
       </div>
 
-
-
     <div id="file-box">
-      <!-- <label>点击上传图片</label> -->
       <input id="file-btn" type="file" file-model="myFile" enctype="multipart/form-data" onchange="angular.element(this).scope().img_display(this.files)">
       <div ng-repeat="item in thumb">
           <label>
@@ -126,28 +130,17 @@
           </label>
           <ng-md-icon icon="delete_sweep" style="fill: ..." size="30px" ng-if="item.imgSrc" ng-click="img_del($index)"></ng-md-icon>
       </div>
-    </div>
-    <md-button class="md-raised md-primary" id="add-btn" ng-click="add()">添加</md-button>
-
+      <md-button class="md-raised md-primary" id="add-btn" ng-click="add()">添加</md-button>
 
     </div>
-    <div id="search-tab">
-      <div style="background-color:rgba(7, 8, 7, 0.21);border-radius:5px;text-align:center;font-size:28px;width:100%;">搜索产品</div>
-      <div  layout="column">
-        <div>
-          <md-input-container class="md-block" flex-gt-sm >
-            <label>在此键入关键字</label>
-            <input ng-model="the_max" style="width:100%;">
-            <md-button class="md-raised" ng-click="search_pro()">搜索</md-button>
-          </md-input-container>
-        </div>
-      </div>
     </div>
   </div>
-
   </div>
   <div id="bottom-word">
       Copyright 2018-2020 All Rights Reserved     天津华宁电子有限公司
+  </div>
+  <div id="second-class" ng-show="second_class_flag" >
+    kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
   </div>
 </body>
 </html>
