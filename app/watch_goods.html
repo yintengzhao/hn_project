@@ -12,17 +12,17 @@
 </head>
 
 <body ng-controller="WatchGoodsCtrl" id="watch_goods" ng-class="" ng-cloak>
- <span class="class">{{allpros.firstclass}}------>{{allpros.secondclass}}</span><br />
- <span>
-   ------>{{allpros.type}}
+ <span class="class"><strong>{{allpros.firstclass}}</strong>---><strong>{{allpros.secondclass}}</strong></span><br />
+ <span class="type">
+   {{allpros.type}}
  </span>
 <!-- <hr/> -->
 <md-divider style="color:gray"></md-divider>
 
-<div style="text-align:center" id="img-area">
+<div id="img-area">
   <img id="pro-img" ng-src="http://{{allpros.image}}">
 </div>
-<md-content>
+<md-content style="margin-top:1px">
 <p class="attr-value">
   【用途】： <span class="apply">{{allpros.apply}}</span><br>
   【参数】： <span class="parameter">{{allpros.parammeter}}</span><br>

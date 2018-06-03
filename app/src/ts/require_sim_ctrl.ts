@@ -10,12 +10,68 @@ if (Ip_Flag == true) {
 else {
   var IpAdress: string = "10.134.41.175";
 }
-$scope.allpros_flag = true
+$scope.allpros_flag = true;
+$scope.first_flag = false;
+$scope.second_flag = false;
+$scope.third_flag = false;
+$scope.fourth_flag = false;
+$scope.fifth_flag = false;
+$scope.sixth_flag = false;
+
+$scope.pro_part_flag =true;
+$scope.search_bar_flag =false;
+
+$window.addEventListener("leavepopstate",function(e){
+  alert("wo");
+},false);
+//搜索商品
+$scope.history_state=[];
+$scope.search_pro=function(){
+  $scope.search_bar_flag =true;
+}
+$scope.hide_search_bar=function(e){
+  $scope.search_bar_flag =false;
+}
+$scope.prevent_event=function($event){
+$event.stopPropagation();
+}
+
+$scope.show_pro=function(){
+  $scope.allpros_1 = [];
+  $scope.allpros_2 = [];
+  var workid={
+    method:'POST',
+    url:'http://'+IpAdress+':8080/ProductCenter/findbyWord',
+    params: { word: $scope.the_max };
+  };
+  $http(workid).then(function(response){
+    for (let ma of response.data) {
+      ma.image = ma.image.split("image/")[0] + "image/thumb_" + ma.image.split("image/")[1];
+    }
 
 
-window.addEventListener("popstate",function(e){
-  alert('sdsjjfjk');
-})
+    $scope.allpros_2 = response.data;
+    $scope.test = [];
+    for (var i = 0; i < $scope.allpros_2.length; i += 2) {
+      $scope.test.push($scope.allpros_2.slice(i, i + 2));
+    }
+    $scope.allpros_flag = true;
+    $scope.search_bar_flag =false;
+    $scope.the_max="";
+  },function(){})
+}
+// $scope.show_back=function(){
+//   $scope.pro_part_flag =true;
+//   $scope.search_bar_flag =false;
+//   $scope.allpros_flag=$scope.history_state.shift();
+//   $scope.first_flag=$scope.history_state.shift();
+//   $scope.second_flag=$scope.history_state.shift();
+//   $scope.third_flag=$scope.history_state.shift();
+//   $scope.fourth_flag=$scope.history_state.shift();
+//   $scope.fifth_flag=$scope.history_state.shift();
+//   $scope.sixth_flag=$scope.history_state.shift();
+//   console.log(  $scope.history_state);
+// }
 // 展示所有商品
 $scope.allpros_1 = [];
 $scope.test = [];

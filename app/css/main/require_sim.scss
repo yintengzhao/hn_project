@@ -94,14 +94,12 @@
 			height: 100%
 		}
 		#second-class{
-			// font-family:inherit;
-			// color:black;
-			// text-align:center;
-			// width:80%;
 			#ppp{
 				text-align: center;
 				margin-left: 5px;
+				margin-top: 1px;
 				height: 9%;
+				line-height: 300%;
         font-size: 16px;
 				font-family:sans-serif;
 				background-color: rgba(0, 0, 0, 0.13);
@@ -154,16 +152,54 @@
 	#logo {
 		display: inline-block;
 		img {
-			width: 200px;
+			width: 190px;
 		}
 	}
 
 	#sys-title {
-		width: 35%;
+		width: 30%;
 		color: black;
 		display: inline-block;
 		vertical-align: top;
-		font-size: 28px;padding-top: 10px
+		font-size: 24px;padding-top: 10px
+	}
+
+	#search-icon{
+		fill:red;
+		cursor:pointer;
+		float: right;
+		margin-top: 5%;
+	}
+	#gray_box{
+		position: absolute;
+		left: 0;
+		top:0;
+		width: 100%;
+		height:100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		#seearch-bar-back{
+			position:relative;
+			top:0%;
+			// left:0;
+			width:100%;
+			height:10%;
+		}
+		#search-bar{
+			height: 3%;
+			position: relative;
+			margin-top: 10%;
+			// left:30%;
+			// top:3%;
+			width: 90%;
+			label{
+				font-size: 15px;
+				color: white;
+			}
+			input{
+				font-size: 15px;
+				color: white;
+			}
+		}
 	}
 }
 
