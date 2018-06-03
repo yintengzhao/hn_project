@@ -313,12 +313,24 @@ top:11.5%;
 			width: 13%;
 			#middle-part-btn{
 				margin-top: 10px;
-				margin-left: 5px;
+				margin-left: 0px;
 				text-align: center;
 				font-size: 28px;
 				border-radius: 5px;
 				background-color: rgb(38, 193, 127);
 				width: 100%;
+			}
+			md-content{
+				background-color:rgba(0, 0, 0, 0.2)
+			}
+			#firstclass_button{
+				border: none;
+				margin-top: 2px;
+				width: 100%;
+				height: 60px;
+				background-color: white;
+				font-size: 20px;
+				font-family: cursive;
 			}
 		}
 		#pro-table{
@@ -403,15 +415,28 @@ top:11.5%;
 		color: white;
 		font-size: 28px;
 		font-family: cursive;
-		height: 500px;
+		height: 86%;
+		width: auto;
+		min-width: 20%;
+		max-width: 30%;
 		background-color: rgb(201, 22, 35);
 		position:absolute;
-left:14%;
+left:13%;
 top:10%;
-border-style:double;
-
+border: none;
 border-color: white;
 // z-index:-1;
+button{
+	width: 100%;
+	height: 60px;
+	border: none;
+	background-color: rgb(201, 22, 35);
+	color: white;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	font-size: 20px;
+	font-family: cursive;
+}
 	}
 }
 }

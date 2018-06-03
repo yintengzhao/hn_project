@@ -46,7 +46,10 @@
 
   <div id="middle-part" layout="row">
     <div id="pro-class">
-      <div id="middle-part-btn" ng-mouseenter="dis_second_class()" ng-mouseleave="hide_second_class()">主类别</div>
+      <div id="middle-part-btn">主类别</div>
+      <md-content >
+        <button id="firstclass_button"  ng-repeat="firstClass in firstClasses" ng-mouseenter="dis_second_class(firstClass.id)" ng-mouseleave="hide_second_class()" ng-click="" >{{firstClass.name}}</button>
+      </md-content>
     </div>
     <div id="pro-table">
       <div id="nav-bar">产品信息</div>
@@ -102,12 +105,19 @@
 
       <md-input-container class="md-block" flex-gt-sm>
         <label>主类别</label>
-        <input ng-model="firstclass">
+        {{according_firstclass}}
+        <md-select ng-model="according_firstclass">
+          <md-option ng-repeat="firstClass in firstClasses" value="{{firstClass}}" ng-click="qwe()">{{firstClass.name}}</md-option>
+          <button style="width:100%;border:none;font-size:24px">+</button>
+        </md-select>
       </md-input-container>
 
       <md-input-container class="md-block" flex-gt-sm>
         <label>次类别</label>
-        <input ng-model="secondclass">
+        <md-select ng-model="according_secondclass">
+          <md-option ng-repeat="display_secondClass in display_secondClasses" value="{{display_secondClass}}">{{display_secondClass.name}}</md-option>
+          <button style="width:100%;border:none;font-size:24px">+</button>
+        </md-select>
       </md-input-container>
 
       <div>
@@ -140,7 +150,9 @@
       Copyright 2018-2020 All Rights Reserved     天津华宁电子有限公司
   </div>
   <div id="second-class" ng-show="second_class_flag" ng-mouseenter="dis_second_class()" ng-mouseleave="hide_second_class()">
-    kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+    <md-content>
+      <button ng-repeat="secondClass in secondClasses">{{secondClass.name}}</button>
+    </md-content>
   </div>
 </body>
 </html>
