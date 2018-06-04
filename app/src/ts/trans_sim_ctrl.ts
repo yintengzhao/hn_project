@@ -1,8 +1,8 @@
 import { ng_app } from './ng_app';
 // angular.element('[ng-controller=MainCtrl]').scope()
 
-ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window', '$http', '$sce',
-  function($scope, $interval, $timeout, $window, $http, $sce) {
+ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window', '$http', '$sce','$mdSidenav'
+  function($scope, $interval, $timeout, $window, $http, $sce,$mdSidenav) {
     var Ip_Flag=false;
     var IpAdress:string
     if(Ip_Flag==true){
@@ -160,16 +160,13 @@ $scope.dis_second_class=function(firstclassid){
     $scope.secondClasses=response.data;
   }, function() { });
 }
+$scope.show_second_class=function(){
+  $scope.second_class_flag=true;
+}
 $scope.hide_second_class=function(){
   $scope.second_class_flag=false;
 }
 //类别部分
-// var workid = {
-//   method: 'POST',
-//   url: 'http://'+IpAdress+':8080/ProductCenter/showSecondclass',
-//   headers: {'Content-Type' : 'text/plain;charset=UTF-8'},
-//   params: { id: $scope.according_firstclass.id },
-// }
 $scope.qwe=function(firstClass){
   $scope.new_firstid=firstClass.id
   $scope.new_firstclass=firstClass.name
@@ -182,19 +179,82 @@ $scope.qwe=function(firstClass){
   }
   $http(workid).then(function(response) {
     $scope.display_secondClasses=response.data;
-    console.log($scope.display_secondClasses[0])
+    // console.log($scope.display_secondClasses[0])
   }, function() { });
   // $http.post('http://'+IpAdress+':8080/ProductCenter/showSecondclass',firstClassid ).then(function(response) {
   //   $scope.display_secondClasses=response.data;
   // }, function() { });
+  //展示次类别弹窗
+  $scope.toggleSidenav_2 = buildToggler('closeEventsDisabled_2');
+  function buildToggler(componentId) {
+    return function() {
+      $mdSidenav(componentId).toggle();
+    };
+  }
 }
+
+
+//将选择的类给添加产品参数赋值
 $scope.qwe_2=function(display_secondClass){
   $scope.new_secondclass=display_secondClass.name
 }
+//查看主要类商品
+$scope.showByFirstclass=function(firstClassid){
+  var workid = {
+    method: 'POST',
+    url: 'http://'+IpAdress+':8080/ProductCenter/showByFirstclass',
+    headers: {'Content-Type' : 'text/plain;charset=UTF-8'},
+    params: { id: firstClassid },
+  }
+  $http(workid).then(function(response) {
+    $scope.allpros=response.data;
+  }, function() { });
+}
+//查看次要类商品
+$scope.showBySecondclass=function(secondClassid){
+  var workid = {
+    method: 'POST',
+    url: 'http://'+IpAdress+':8080/ProductCenter/showBySecondclass',
+    headers: {'Content-Type' : 'text/plain;charset=UTF-8'},
+    params: { id: secondClassid },
+  }
+  $http(workid).then(function(response) {
+    $scope.allpros=response.data;
+  }, function() { });
+}
+//添加主类别
+$scope.toggleSidenav = buildToggler('closeEventsDisabled');
+function buildToggler(componentId) {
+  return function() {
+    $mdSidenav(componentId).toggle();
+  };
+}
 
-
-
-
+$scope.add_firstclass=function(){
+  var workid = {
+    method: 'POST',
+    url: 'http://'+IpAdress+':8080/ProductCenter/addFirstclass',
+    headers: {'Content-Type' : 'text/plain;charset=UTF-8'},
+    params: { name: $scope.add_firstclass_value },
+  }
+  $http(workid).then(function(response) {
+    //展示一级列表
+    $http.get("http://"+IpAdress+":8080/ProductCenter/showFirstclass").then(
+      function(response){$scope.firstClasses=response.data},
+      function(){alert('firstClasseserr')});
+  }, function() { });
+}
+//添加次类别
+$scope.add_secondclass=function(){
+  var workid = {
+    method: 'POST',
+    url: 'http://'+IpAdress+':8080/ProductCenter/addSecondclass',
+    headers: {'Content-Type' : 'text/plain;charset=UTF-8'},
+    params: {firstname:$scope.new_firstclass; secondname: $scope.add_secondclass_value },
+  }
+  $http(workid).then(function(response) {
+  }, function() { });
+}
 
 
 
