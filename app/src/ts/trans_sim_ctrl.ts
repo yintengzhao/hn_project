@@ -3,7 +3,7 @@ import { ng_app } from './ng_app';
 
 ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window', '$http', '$sce',
   function($scope, $interval, $timeout, $window, $http, $sce) {
-    var Ip_Flag=true;
+    var Ip_Flag=false;
     var IpAdress:string
     if(Ip_Flag==true){
       var IpAdress:string="39.105.79.4";
@@ -25,39 +25,39 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
         ar.push(Math.floor(Math.random() * 100) + 1);
       }, 500)
     //chart----------------------------------------
-    // const DATA_NUM = 30;
-    // $scope.labels = Array(DATA_NUM).join(1).split('').map(function() { return ""; });
-    // $scope.series = ['Series A', 'Series B'];
-    // $scope.data = [
-    //   Array(DATA_NUM).join(1).split('').map(function() { return 0; }),
-    //   Array(DATA_NUM).join(1).split('').map(function() { return 0; }),
-    // ];
-    // $scope.data2 = [
-    //   Array(DATA_NUM).join(1).split('').map(function() { return 0; }),
-    // ];
-    // $scope.onClick = function(points, evt) {
-    //   // console.log(points, evt);
-    // };
-    // $scope.colors = ['#FF5C00', '#167BAC'];
-    // $scope.colors2 = ['#10BE1C'];
-    // $scope.datasetOverride = [{ lineTension: 0, fill: false }, { lineTension: 0, fill: false }, { lineTension: 0, fill: true }];
-    // $scope.datasetOverride2 = [{ fill: true }];
-    // $scope.options = {
-    //   scales: {
-    //     yAxes: [{
-    //       ticks: { display: false, suggestedMin: 0 }
-    //     }],
-    //     xAxes: [{
-    //       ticks: { display: false, suggestedMin: 0 }
-    //     }]
-    //   },
-    //   // https://stackoverflow.com/questions/37621020/setting-width-and-height
-    //   responsive: true,
-    //   maintainAspectRatio: false,
-    //   legends: {
-    //     display: false
-    //   }
-    // };
+    const DATA_NUM = 30;
+    $scope.labels = Array(DATA_NUM).join(1).split('').map(function() { return ""; });
+    $scope.series = ['Series A', 'Series B'];
+    $scope.data = [
+      Array(DATA_NUM).join(1).split('').map(function() { return 0; }),
+      Array(DATA_NUM).join(1).split('').map(function() { return 0; }),
+    ];
+    $scope.data2 = [
+      Array(DATA_NUM).join(1).split('').map(function() { return 0; }),
+    ];
+    $scope.onClick = function(points, evt) {
+      // console.log(points, evt);
+    };
+    $scope.colors = ['#FF5C00', '#167BAC'];
+    $scope.colors2 = ['#10BE1C'];
+    $scope.datasetOverride = [{ lineTension: 0, fill: false }, { lineTension: 0, fill: false }, { lineTension: 0, fill: true }];
+    $scope.datasetOverride2 = [{ fill: true }];
+    $scope.options = {
+      scales: {
+        yAxes: [{
+          ticks: { display: false, suggestedMin: 0 }
+        }],
+        xAxes: [{
+          ticks: { display: false, suggestedMin: 0 }
+        }]
+      },
+      // https://stackoverflow.com/questions/37621020/setting-width-and-height
+      responsive: true,
+      maintainAspectRatio: false,
+      legends: {
+        display: false
+      }
+    };
     //展示一级列表
     $http.get("http://"+IpAdress+":8080/ProductCenter/showFirstclass").then(
       function(response){$scope.firstClasses=response.data},
@@ -83,7 +83,7 @@ $scope.add=function(){
               var workid={
                         method:'POST',
                         url:'http://'+IpAdress+':8080/ProductCenter/addProduct',
-                        params: {type:$scope.type;apply:$scope.apply;parameter:$scope.parameter;firstclass:$scope.firstclass;secondclass:$scope.secondclass;image:response.data.path},
+                        params: {type:$scope.type;apply:$scope.apply;parameter:$scope.parameter;firstclass:$scope.new_firstclass;secondclass:$scope.new_secondclass;image:response.data.path},
                       }
                       $http(workid).then(function(response){
                         // 刷新产品信息
@@ -157,9 +157,6 @@ $scope.dis_second_class=function(firstclassid){
     params: { id: firstclassid },
   }
   $http(workid).then(function(response) {
-    if(response.data==''){
-      // $scope.secondClasses[].push();
-    };
     $scope.secondClasses=response.data;
   }, function() { });
 }
@@ -173,13 +170,27 @@ $scope.hide_second_class=function(){
 //   headers: {'Content-Type' : 'text/plain;charset=UTF-8'},
 //   params: { id: $scope.according_firstclass.id },
 // }
-$scope.qwe=function(){
-  // $scope.according_firstclass="";
-  $http.post('http://'+IpAdress+':8080/ProductCenter/showSecondclass',$scope.according_firstclass ).then(function(response) {
+$scope.qwe=function(firstClass){
+  $scope.new_firstid=firstClass.id
+  $scope.new_firstclass=firstClass.name
+  //展示二级列表
+  var workid = {
+    method: 'POST',
+    url: 'http://'+IpAdress+':8080/ProductCenter/showSecondclass',
+    headers: {'Content-Type' : 'text/plain;charset=UTF-8'},
+    params: { id: $scope.new_firstid },
+  }
+  $http(workid).then(function(response) {
     $scope.display_secondClasses=response.data;
+    console.log($scope.display_secondClasses[0])
   }, function() { });
+  // $http.post('http://'+IpAdress+':8080/ProductCenter/showSecondclass',firstClassid ).then(function(response) {
+  //   $scope.display_secondClasses=response.data;
+  // }, function() { });
 }
-
+$scope.qwe_2=function(display_secondClass){
+  $scope.new_secondclass=display_secondClass.name
+}
 
 
 

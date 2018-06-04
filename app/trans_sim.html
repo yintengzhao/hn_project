@@ -102,21 +102,22 @@
         <label>型号</label>
         <input ng-model="type">
       </md-input-container>
+      <!-- {{according_firstclass}} -->
 
       <md-input-container class="md-block" flex-gt-sm>
         <label>主类别</label>
-        {{according_firstclass}}
         <md-select ng-model="according_firstclass">
-          <md-option ng-repeat="firstClass in firstClasses" value="{{firstClass}}" ng-click="qwe()">{{firstClass.name}}</md-option>
-          <button style="width:100%;border:none;font-size:24px">+</button>
+          <md-option ng-repeat="firstClass in firstClasses" value="{{firstClass}}" ng-click="qwe(firstClass)">{{firstClass.name}}</md-option>
+          <button style="width:100%;border:none;font-size:24px" ng-click="add_firstclass()">+</button>
         </md-select>
       </md-input-container>
 
       <md-input-container class="md-block" flex-gt-sm>
+        {{according_secondclass}}
         <label>次类别</label>
         <md-select ng-model="according_secondclass">
-          <md-option ng-repeat="display_secondClass in display_secondClasses" value="{{display_secondClass}}">{{display_secondClass.name}}</md-option>
-          <button style="width:100%;border:none;font-size:24px">+</button>
+          <md-option ng-repeat="display_secondClass in display_secondClasses" value="{{display_secondClass}}" ng-click="qwe_2(display_secondClass)">{{display_secondClass.name}}</md-option>
+          <button style="width:100%;border:none;font-size:24px" ng-click="add_secondclass()">+</button>
         </md-select>
       </md-input-container>
 
