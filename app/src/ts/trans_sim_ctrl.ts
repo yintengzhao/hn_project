@@ -227,6 +227,12 @@ $scope.showByFirstclass=function(firstClassid,firstClassname){
           function(response){$scope.firstClasses=response.data},
           function(){alert('firstClasseserr')});
           $scope.del_tab_flag=false;
+
+          $scope.warn_tab_flag=true;
+          $timeout(function(){
+            $scope.warn_tab_flag=false;
+          },1000);
+
       }, function() { });
     }
   }
@@ -255,6 +261,10 @@ $scope.showBySecondclass=function(secondClassid,secondClassname){
       }
       $http(workid).then(function(response) {
         $scope.del_tab_flag=false;
+        $scope.warn_tab_flag=true;
+        $timeout(function(){
+  $scope.warn_tab_flag=false;
+},1000);
       }, function() { });
     }
   }
@@ -279,10 +289,11 @@ $scope.add_firstclass=function(){
     params: { name: $scope.add_firstclass_value },
   }
   $http(workid).then(function(response) {
+    $scope.warn_tab_flag=true;
+    $timeout(function(){
+      $scope.warn_tab_flag=false;
+    },1000);
     //展示一级列表
-    return function() {
-      $mdSidenav().toggle();
-    };
     $http.get("http://"+IpAdress+":8080/ProductCenter/showFirstclass").then(
       function(response){$scope.firstClasses=response.data},
       function(){alert('firstClasseserr')});
@@ -297,6 +308,10 @@ $scope.add_secondclass=function(){
     params: {firstname:$scope.new_firstclass; secondname: $scope.add_secondclass_value },
   }
   $http(workid).then(function(response) {
+    $scope.warn_tab_flag=true;
+    $timeout(function(){
+      $scope.warn_tab_flag=false;
+    },1000);
   }, function() { });
 }
 
