@@ -48,11 +48,15 @@
     <div id="pro-class">
       <div id="middle-part-btn">主类别</div>
       <md-content >
-        <button id="firstclass_button"  ng-repeat="firstClass in firstClasses" ng-mouseenter="dis_second_class(firstClass.id)" ng-mouseleave="hide_second_class()" ng-click="showByFirstclass(firstClass.id)" >{{firstClass.name}}</button>
+        <button id="firstclass_button"  ng-repeat="firstClass in firstClasses" ng-mouseenter="dis_second_class(firstClass.id)" ng-mouseleave="hide_second_class()" ng-click="showByFirstclass(firstClass.id,firstClass.name)" >{{firstClass.name}}</button>
       </md-content>
     </div>
     <div id="pro-table">
-      <div id="nav-bar">产品信息</div>
+      <div id="nav-bar">
+        产品信息
+        <ng-md-icon icon="delete_sweep" style="fill:red;cursor:pointer;float:right" size="30px" ng-click="del_firstclass()">
+        </ng-md-icon>
+      </div>
       <md-content >
         <table class="watch-table">
           <thead>
@@ -159,10 +163,10 @@
       <label>主类别</label>
       <input  ng-model="add_firstclass_value" style="width:100%;">
     </md-input-container>
-    <md-button  ng-click="add_firstclass()" class="md-accent md-primary">
+    <md-button  ng-click="add_firstclass();toggleSidenav()" class="md-accent md-raised md-primary">
       添加
     </md-button>
-    <md-button ng-click="toggleSidenav()" class="md-accent md-warn">
+    <md-button ng-click="toggleSidenav()" class="md-raised">
       关闭
     </md-button>
   </md-content>
@@ -191,13 +195,33 @@
 
 
 
+<!-- 批量弹窗 -->
+<div id="myModal" class="modal" ng-show="del_tab_flag">
+  <!-- 弹窗内容 -->
+	<div class="modal-content">
+	  <div class="modal-header">
+	    <span class="close" ng-click="cancel_del_tab()">&times;</span>
+	    <h2>批量删除</h2>
+	  </div>
+	  <div class="modal-body">
+	    <p style="color:red;font-size:30px;">{{del_firstclass_message}}</p>
+	  </div>
+	  <div class="modal-footer" style="text-align:center">
+      <md-button class="md-raised md-warn" ng-click="confirm_del()">我确定</md-button>
+      <md-button class="md-raised" ng-click="cancel_del_tab()">再想想</md-button>
+	  </div>
+	</div>
+</div>
+
+
+
 
   <div id="bottom-word">
-      Copyright 2018-2020 All Rights Reserved     天津华宁电子有限公司
+      Copyright 2018-2020 All Rights Reserved  天津华宁电子有限公司
   </div>
   <div id="second-class" ng-show="second_class_flag" ng-mouseenter="show_second_class()" ng-mouseleave="hide_second_class()">
     <md-content>
-      <button ng-repeat="secondClass in secondClasses" ng-click="showBySecondclass(secondClass.id)">{{secondClass.name}}</button>
+      <button ng-repeat="secondClass in secondClasses" ng-click="showBySecondclass(secondClass.id,secondClass.name)">{{secondClass.name}}</button>
     </md-content>
   </div>
 </body>

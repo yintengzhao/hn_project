@@ -199,7 +199,8 @@ $scope.qwe_2=function(display_secondClass){
   $scope.new_secondclass=display_secondClass.name
 }
 //查看主要类商品
-$scope.showByFirstclass=function(firstClassid){
+$scope.del_tab_flag=false;
+$scope.showByFirstclass=function(firstClassid,firstClassname){
   var workid = {
     method: 'POST',
     url: 'http://'+IpAdress+':8080/ProductCenter/showByFirstclass',
@@ -209,9 +210,29 @@ $scope.showByFirstclass=function(firstClassid){
   $http(workid).then(function(response) {
     $scope.allpros=response.data;
   }, function() { });
+  //删除主类别
+  $scope.del_firstclass=function(){
+    $scope.del_tab_flag=true;
+    $scope.del_firstclass_message="你将删除"+firstClassname+"及该分类下(即当前页面)所有产品，你确定吗？";
+    $scope.confirm_del=function(){
+      var workid = {
+        method: 'POST',
+        url: 'http://'+IpAdress+':8080/ProductCenter/delFirstclass',
+        headers: {'Content-Type' : 'text/plain;charset=UTF-8'},
+        params: { id: firstClassid },
+      }
+      $http(workid).then(function(response) {
+        //刷新主类
+        $http.get("http://"+IpAdress+":8080/ProductCenter/showFirstclass").then(
+          function(response){$scope.firstClasses=response.data},
+          function(){alert('firstClasseserr')});
+          $scope.del_tab_flag=false;
+      }, function() { });
+    }
+  }
 }
 //查看次要类商品
-$scope.showBySecondclass=function(secondClassid){
+$scope.showBySecondclass=function(secondClassid,secondClassname){
   var workid = {
     method: 'POST',
     url: 'http://'+IpAdress+':8080/ProductCenter/showBySecondclass',
@@ -221,6 +242,26 @@ $scope.showBySecondclass=function(secondClassid){
   $http(workid).then(function(response) {
     $scope.allpros=response.data;
   }, function() { });
+  //删除次类别
+  $scope.del_firstclass=function(){
+    $scope.del_tab_flag=true;
+    $scope.del_firstclass_message="你将删除"+secondClassname+"及该分类下所有产品，你确定吗？";
+    $scope.confirm_del=function(){
+      var workid = {
+        method: 'POST',
+        url: 'http://'+IpAdress+':8080/ProductCenter/delSecondclass',
+        headers: {'Content-Type' : 'text/plain;charset=UTF-8'},
+        params: { id: secondClassid },
+      }
+      $http(workid).then(function(response) {
+        $scope.del_tab_flag=false;
+      }, function() { });
+    }
+  }
+}
+//再想想 X 取消弹窗
+$scope.cancel_del_tab=function(){
+  $scope.del_tab_flag=false;
 }
 //添加主类别
 $scope.toggleSidenav = buildToggler('closeEventsDisabled');
@@ -239,6 +280,9 @@ $scope.add_firstclass=function(){
   }
   $http(workid).then(function(response) {
     //展示一级列表
+    return function() {
+      $mdSidenav().toggle();
+    };
     $http.get("http://"+IpAdress+":8080/ProductCenter/showFirstclass").then(
       function(response){$scope.firstClasses=response.data},
       function(){alert('firstClasseserr')});
