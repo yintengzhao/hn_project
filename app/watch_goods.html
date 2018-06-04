@@ -23,10 +23,19 @@
   <img id="pro-img" ng-src="http://{{allpros.image}}">
 </div>
 <md-content style="margin-top:1px">
-<p class="attr-value">
-  【用途】： <span class="apply">{{allpros.apply}}</span><br>
-  【参数】： <span class="parameter">{{allpros.parammeter}}</span><br>
-</p>
+  <md-tabs >
+     <md-tab label="主要用途">
+         <p class="attr-value">
+           【用途】： <span class="apply">{{allpros.apply}}</span><br>
+         </p>
+     </md-tab>
+     <md-tab label="技术参数">
+         <p class="attr-value">
+           【参数】： <span class="parameter">{{allpros.parammeter}}</span><br>
+         </p>
+     </md-tab>
+
+   </md-tabs>
 </md-content>
 <div id="bottom-word">
     Copyright 2018-2020 All Rights Reserved     天津华宁电子有限公司

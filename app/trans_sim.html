@@ -37,8 +37,8 @@
         <!-- <md-button class="md-raised md-warn" >搜索</md-button> -->
       </div>
       <div id="login">
-        <md-button ng-click="" style="font-size:20px">登录</md-button>/
-        <md-button ng-click="" style="font-size:20px">注册</md-button>
+        <md-button ng-click="" style="font-size:20px;border-radius:15px">登录</md-button>/
+        <md-button ng-click="" style="font-size:20px;border-radius:15px">退出</md-button>
       </div>
 
     </div>
@@ -145,7 +145,7 @@
           </label>
           <ng-md-icon icon="delete_sweep" style="fill: ..." size="30px" ng-if="item.imgSrc" ng-click="img_del($index)"></ng-md-icon>
       </div>
-      <md-button class="md-raised md-primary" id="add-btn" ng-click="add()">添加</md-button>
+      <md-button class="md-raised md-primary" id="add-btn" ng-click="add()" style="border-radius:15px;">添加</md-button>
 
     </div>
     </div>
@@ -163,10 +163,10 @@
       <label>主类别</label>
       <input  ng-model="add_firstclass_value" style="width:100%;">
     </md-input-container>
-    <md-button  ng-click="add_firstclass();toggleSidenav()" class="md-accent md-raised md-primary">
+    <md-button  ng-click="add_firstclass();toggleSidenav()" class="md-accent md-raised md-primary" style="border-radius:15px;">
       添加
     </md-button>
-    <md-button ng-click="toggleSidenav()" class="md-raised">
+    <md-button ng-click="toggleSidenav()" class="md-raised" style="border-radius:15px;">
       关闭
     </md-button>
   </md-content>
@@ -184,10 +184,10 @@
       <label>次类别</label>
       <input  ng-model="add_secondclass_value" style="width:100%;">
     </md-input-container>
-    <md-button  ng-click="add_secondclass();toggleSidenav_2()" class="md-accent md-primary">
+    <md-button  ng-click="add_secondclass();toggleSidenav_2()" class="md-accent md-primary" style="border-radius:15px;">
       添加
     </md-button>
-    <md-button ng-click="toggleSidenav_2()" class="md-accent md-warn">
+    <md-button ng-click="toggleSidenav_2()" class="md-accent md-warn" style="border-radius:15px;">
       关闭
     </md-button>
   </md-content>
@@ -207,8 +207,8 @@
 	    <p style="color:red;font-size:30px;">{{del_firstclass_message}}</p>
 	  </div>
 	  <div class="modal-footer" style="text-align:center">
-      <md-button class="md-raised md-warn" ng-click="confirm_del()">我确定</md-button>
-      <md-button class="md-raised" ng-click="cancel_del_tab()">再想想</md-button>
+      <md-button class="md-raised md-warn" ng-click="confirm_del()" style="border-radius:15px;">我确定</md-button>
+      <md-button class="md-raised" ng-click="cancel_del_tab()" style="border-radius:15px;">再想想</md-button>
 	  </div>
 	</div>
 </div>
