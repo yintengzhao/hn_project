@@ -11,25 +11,40 @@
   <body ng-controller="MainCtrl" id="main" ng-class="" ng-cloak>
 
     <div id="title">
-      <div id="sys-title-logo">
+      <div id="sys-title-logo" layout="row">
         <div id="logo">
           <img src="assets/huaning-logo.png">
         </div>
-        <div id="sys-title"><strong>天津华宁电子有限公司</strong></div>
-        <div id="sys-title"><strong>产品展示系统</strong></div>
+        <div id="sys-title"><strong>天津华宁电子有限公司产品展示系统</strong></div>
 
       </div>
     </div>
 
+    <div id="login_area">
+      <h3 class="md-display-1" >登录</h3>
+      <md-input-container class="md-block" id="search-bar" >
+        <label>用户名</label>
+        <input  ng-model="username" style="width:100%;">
+      </md-input-container>
 
-    <div id="modules" layout="column">
+      <md-input-container class="md-block" id="search-bar" >
+        <label>密码</label>
+        <input  ng-model="password" style="width:100%;">
+      </md-input-container>
+
+      <md-button ng-click="login()" class="md-raised" style="background-color:rgb(47, 242, 172);width:97%;border-radius:10px;font-size:20px">登录</md-button>
+
+    </div>
+
+
+    <!-- <div id="modules" layout="column">
       <a href="trans_sim.html">
         <div id="trans_sim" class="module blue">管理员系统</div>
       </a>
       <a href="require_sim.html">
         <div class="module red">用户系统</div>
       </a>
-    </div>
+    </div> -->
 
   </body>
 </html>

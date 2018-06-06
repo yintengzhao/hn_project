@@ -1,8 +1,8 @@
 import { ng_app } from './ng_app';
 // angular.element('[ng-controller=MainCtrl]').scope()
 
-ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window', '$http', '$sce','$mdSidenav'
-  function($scope, $interval, $timeout, $window, $http, $sce,$mdSidenav) {
+ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window', '$http', '$sce','$mdSidenav','$check_login'
+  function($scope, $interval, $timeout, $window, $http, $sce,$mdSidenav,$check_login) {
     var Ip_Flag=false;
     var IpAdress:string
     if(Ip_Flag==true){
@@ -10,6 +10,20 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
     }
     else{
       var IpAdress:string="10.134.40.219";
+    }
+
+    //退出系统
+    $scope.logout=function(){
+      $http.get("http://"+IpAdress+":8080/ProductCenter/logout").then(
+        function(response){
+          $window.location.href="index.html";
+        },
+
+        function(){
+          alert('logout err');
+          $window.location.href="index.html";
+
+        });
     }
 
     //time
@@ -231,7 +245,7 @@ $scope.showByFirstclass=function(firstClassid,firstClassname){
           $scope.warn_tab_flag=true;
           $timeout(function(){
             $scope.warn_tab_flag=false;
-          },1000);
+          },1300);
 
       }, function() { });
     }
@@ -264,7 +278,7 @@ $scope.showBySecondclass=function(secondClassid,secondClassname){
         $scope.warn_tab_flag=true;
         $timeout(function(){
   $scope.warn_tab_flag=false;
-},1000);
+},1300);
       }, function() { });
     }
   }
@@ -289,10 +303,11 @@ $scope.add_firstclass=function(){
     params: { name: $scope.add_firstclass_value },
   }
   $http(workid).then(function(response) {
+    $scope.add_firstclass_value=null;
     $scope.warn_tab_flag=true;
     $timeout(function(){
       $scope.warn_tab_flag=false;
-    },1000);
+    },1300);
     //展示一级列表
     $http.get("http://"+IpAdress+":8080/ProductCenter/showFirstclass").then(
       function(response){$scope.firstClasses=response.data},
@@ -311,7 +326,7 @@ $scope.add_secondclass=function(){
     $scope.warn_tab_flag=true;
     $timeout(function(){
       $scope.warn_tab_flag=false;
-    },1000);
+    },100);
   }, function() { });
 }
 

@@ -25,6 +25,11 @@ $httpProvider.defaults.useXDomain=true;
 $httpProvider.defaults.headers.common['X-Requested-With'];
 }
 ]);
+
+ng_app.service('$check_login',function($window){
+
+  // $window.location.href="index.html";
+})
 //
 
 export { ng_app }
