@@ -14,4 +14,11 @@ ng_app.controller("MainCtrl", ['$scope', '$interval', '$timeout', '$window', '$h
       $http(workid).then(function(){};)
       // $http(workid).then(function(){};function(){});
     }
+
+    var E = window.wangEditor
+        var editor = new E('#editor')
+        // 或者 var editor = new E( document.getElementById('editor') )
+        editor.create()
+
+
 })
