@@ -15,7 +15,7 @@ require.config({
 
 
       "angular-weather-widget":libUrl+'angular-weather-widget',
-      "wangEditor": libUrl+'wangeditor/release/wangEditor.min',
+      // "wangEditor": libUrl+'wangeditor/release/wangEditor.min',
     },
     // https://www.codeproject.com/articles/1123309/configure-angular-material-with-require-js
     shim: {
@@ -28,7 +28,7 @@ require.config({
         main_ctrl: {
             exports: "MainCtrl",
             deps: [
-                "ng_app", "angular-chart", "wangEditor"
+                "ng_app", "angular-chart"
             ]
         },
         require_sim_ctrl: {
@@ -37,7 +37,7 @@ require.config({
                 "ng_app", "angular-chart"
             ]
         },
-        require_sim_ctrl: {
+        require_sim_ctrl2: {
             exports: "WatchGoodsCtrl",
             deps: [
                 "ng_app", "angular-chart"
