@@ -39,9 +39,6 @@ ng_app.service('$check_login',function($window,$http){
                 $window.location.href="index.html";
               }
               else{
-
-                // $window.location.href="trans_sim.html";
-
               }
             });
 

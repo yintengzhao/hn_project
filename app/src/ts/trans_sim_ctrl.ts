@@ -23,6 +23,9 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
 
 
 
+
+
+
     var E = $window.wangEditor;
     var apply = new E('#apply');
     // // 或者 var editor = new E( document.getElementById('editor') )
@@ -139,18 +142,31 @@ $scope.add=function(){
           $http(workid).then
           (
             function(response){
+              var fe = new FormData();
+              fe.append('type',$scope.type);
+              fe.append('apply',apply.txt.html());
+              fe.append('parameter',parameter.txt.html());
+              fe.append('firstclass',$scope.new_firstclass);
+              fe.append('secondclass',$scope.new_secondclass);
+              fe.append('image',response.data.path)
               // 添加模块
               var workid={
+
+
                         method:'POST',
                         url:'http://'+IpAdress+':8080/ProductCenter/addProduct',
-                        params: {type:$scope.type;apply:apply.txt.html();parameter:parameter.txt.html();firstclass:$scope.new_firstclass;secondclass:$scope.new_secondclass;image:response.data.path},
+                        data: fe,
+                        headers: {'Content-Type':undefined},
+
+                        // params: {type:$scope.type;apply:apply.txt.html();parameter:parameter.txt.html();firstclass:$scope.new_firstclass;secondclass:$scope.new_secondclass;image:response.data.path},
                       }
                       $http(workid).then(function(response){
                         // 刷新产品信息
                         $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
                                   .then(function(response) {
                                     for(let ma of response.data){
-                                      ma.apply=ma.apply.substring(0,30)
+                                      ma.apply=ma.apply.substring(0,30);
+                                      ma.parameter=ma.parameter.substring(0,30);
                                     }
                                     $scope.allpros = response.data;
                                   });
@@ -158,7 +174,9 @@ $scope.add=function(){
                         $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
                                   .then(function(response) {
                                     for(let ma of response.data){
-                                      ma.apply=ma.apply.substring(0,30)
+                                      ma.apply=ma.apply.substring(0,30);
+                                      ma.parameter=ma.parameter.substring(0,30);
+
                                     }
                                     $scope.allpros = response.data;
                                   });
@@ -171,7 +189,9 @@ $scope.add=function(){
 $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
           .then(function(response) {
             for(let ma of response.data){
-              ma.apply=ma.apply.substring(0,20)
+              ma.apply=ma.apply.substring(0,20);
+              ma.parameter=ma.parameter.substring(0,20);
+
             }
             $scope.allpros = response.data;
           });
