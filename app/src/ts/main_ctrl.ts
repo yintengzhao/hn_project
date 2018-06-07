@@ -16,14 +16,46 @@ ng_app.controller("MainCtrl", ['$scope', '$interval', '$timeout', '$window', '$h
       $http(workid).then(function(response){
         console.log(response.data.result);
         if(response.data.result=="ok"){
+          // alert('登录成功')
           $window.location.href="trans_sim.html";
         }
         else{
           alert('用户名或密码错误')
         }
       })
-      // $http(workid).then(function(){};function(){});
     };
+
+
+$scope.get_html=function(){
+  // alert('hanshu');
+  $http.get("http://"+IpAdress+":8080/ProductCenter/logincheck")
+            .then(function(response) {
+              alert(response.data.result)
+              // if(response.data.result=="loggedout")
+              // {
+              //   $window.location.href="index.html";
+              // }
+              // else{
+              //   $window.location.href="trans_sim.html";
+              //
+              // }
+            });
+}
+
+//退出系统
+$scope.logout=function(){
+  $http.get("http://"+IpAdress+":8080/ProductCenter/logout").then(
+    function(response){
+      // $window.location.href="index.html";
+    },
+
+    function(){
+      alert('logout err');
+      $window.location.href="index.html";
+
+    });
+}
+
     // console.log($scope);
 //     var E = $window.wangEditor;
 //     var editor = new E('#editor');
