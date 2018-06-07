@@ -37,7 +37,7 @@ require.config({
                 "ng_app", "angular-chart"
             ]
         },
-        require_sim_ctrl2: {
+        watch_goods_ctrl: {
             exports: "WatchGoodsCtrl",
             deps: [
                 "ng_app", "angular-chart"

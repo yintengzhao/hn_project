@@ -12,6 +12,52 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
       var IpAdress:string="10.134.40.219";
     }
 
+
+
+
+
+
+
+
+
+
+
+
+    var E = $window.wangEditor;
+    var editor = new E('#apply');
+    // // 或者 var editor = new E( document.getElementById('editor') )
+    editor.customConfig.menus = [
+      'head',  // 标题
+  'bold',  // 粗体
+  'fontSize',  // 字号
+  'fontName',  // 字体
+  'italic',  // 斜体
+  'foreColor',  // 文字颜色
+  'backColor',  // 背景颜色
+  'link',  // 插入链接
+  'justify',  // 对齐方式
+  'table',  // 表格
+]
+    editor.create();
+
+
+    var E = $window.wangEditor;
+    var editor = new E('#parameter');
+    // // 或者 var editor = new E( document.getElementById('editor') )
+    editor.customConfig.menus = [
+      'head',  // 标题
+  'bold',  // 粗体
+  'fontSize',  // 字号
+  'fontName',  // 字体
+  'italic',  // 斜体
+  'foreColor',  // 文字颜色
+  'backColor',  // 背景颜色
+  'link',  // 插入链接
+  'justify',  // 对齐方式
+  'table',  // 表格
+]
+    editor.create();
+
     //退出系统
     $scope.logout=function(){
       $http.get("http://"+IpAdress+":8080/ProductCenter/logout").then(
@@ -97,7 +143,7 @@ $scope.add=function(){
               var workid={
                         method:'POST',
                         url:'http://'+IpAdress+':8080/ProductCenter/addProduct',
-                        params: {type:$scope.type;apply:$scope.apply;parameter:$scope.parameter;firstclass:$scope.new_firstclass;secondclass:$scope.new_secondclass;image:response.data.path},
+                        params: {type:$scope.type;apply:editor.txt.html();parameter:$scope.parameter;firstclass:$scope.new_firstclass;secondclass:$scope.new_secondclass;image:response.data.path},
                       }
                       $http(workid).then(function(response){
                         // 刷新产品信息

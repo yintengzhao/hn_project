@@ -6,6 +6,8 @@
   <title></title>
   <link rel="stylesheet" href="/build/vendor.css">
   <link rel="stylesheet" href="/build/application.css">
+  <script type="text/javascript" src="./libs/wangeditor/release/wangEditor.min.js"></script>
+
   <script src="require.js" defer async="true" data-main="build/root"></script>
 </head>
 
@@ -99,9 +101,9 @@
 
 
 <div id="geshi">
+  <div id="nav-bar">添加产品</div>
 
-    <div id="add-tab">
-      <div id="nav-bar">添加产品</div>
+    <md-content id="add-tab">
       <md-input-container class="md-block" flex-gt-sm>
         <label>型号</label>
         <input ng-model="type">
@@ -117,7 +119,6 @@
       </md-input-container>
 
       <md-input-container class="md-block" flex-gt-sm>
-        {{according_secondclass}}
         <label>次类别</label>
         <md-select ng-model="according_secondclass">
           <md-option ng-repeat="display_secondClass in display_secondClasses" value="{{display_secondClass}}" ng-click="qwe_2(display_secondClass)">{{display_secondClass.name}}</md-option>
@@ -125,30 +126,28 @@
         </md-select>
       </md-input-container>
 
-      <div>
-        <label style="color:gray">用途</label><br />
-        <textarea id="apply" ng-model="apply"></textarea>
-        <!-- <input ng-model="apply"> -->
+      <div id="file-box">
+        <input id="file-btn" type="file" file-model="myFile" enctype="multipart/form-data" onchange="angular.element(this).scope().img_display(this.files)">
+        <div ng-repeat="item in thumb">
+            <label>
+                <img ng-src="{{item.imgSrc}}"/>
+            </label>
+            <ng-md-icon icon="delete_sweep" style="fill: ..." size="30px" ng-if="item.imgSrc" ng-click="img_del($index)"></ng-md-icon>
+        </div>
       </div>
+        <div id="apply">
+            <p>用途...</p>
+        </div>
 
-      <div>
-        <label style="color:gray">参数</label><br />
-        <textarea id="parameter" ng-model="parameter"></textarea>
-        <!-- <input ng-model="parameter"> -->
-      </div>
+        <div id="parameter">
+            <p>参数...</p>
+        </div>
+<div>
+  <md-button class="md-raised md-primary" id="add-btn" ng-click="add()" style="border-radius:15px;">添加</md-button>
 
-    <div id="file-box">
-      <input id="file-btn" type="file" file-model="myFile" enctype="multipart/form-data" onchange="angular.element(this).scope().img_display(this.files)">
-      <div ng-repeat="item in thumb">
-          <label>
-              <img ng-src="{{item.imgSrc}}"/>
-          </label>
-          <ng-md-icon icon="delete_sweep" style="fill: ..." size="30px" ng-if="item.imgSrc" ng-click="img_del($index)"></ng-md-icon>
-      </div>
-      <md-button class="md-raised md-primary" id="add-btn" ng-click="add()" style="border-radius:15px;">添加</md-button>
+</div>
 
-    </div>
-    </div>
+  </md-content>
   </div>
   </div>
 

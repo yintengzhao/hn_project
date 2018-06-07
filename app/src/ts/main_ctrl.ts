@@ -13,12 +13,36 @@ ng_app.controller("MainCtrl", ['$scope', '$interval', '$timeout', '$window', '$h
           password: $scope.password
         }
       };
-      $http(workid).then(function() { })
+      $http(workid).then(function(response){
+        console.log(response.data.result);
+        if(response.data.result=="ok"){
+          $window.location.href="trans_sim.html";
+        }
+        else{
+          alert('用户名或密码错误')
+        }
+      })
       // $http(workid).then(function(){};function(){});
     };
     // console.log($scope);
-    var E = $window.wangEditor;
-    var editor = new E('#editor');
-    // // 或者 var editor = new E( document.getElementById('editor') )
-    editor.create();
+//     var E = $window.wangEditor;
+//     var editor = new E('#editor');
+//     // // 或者 var editor = new E( document.getElementById('editor') )
+//     editor.customConfig.menus = [
+//       'head',  // 标题
+//   'bold',  // 粗体
+//   'fontSize',  // 字号
+//   'fontName',  // 字体
+//   'italic',  // 斜体
+//   'foreColor',  // 文字颜色
+//   'backColor',  // 背景颜色
+//   'link',  // 插入链接
+//   'justify',  // 对齐方式
+//   'table',  // 表格
+// ]
+//     editor.create();
+// $scope.get_html=function(){
+//   alert(editor.txt.html())
+//
+// }
 }])
