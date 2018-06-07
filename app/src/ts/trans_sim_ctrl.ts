@@ -24,9 +24,9 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
 
 
     var E = $window.wangEditor;
-    var editor = new E('#apply');
+    var apply = new E('#apply');
     // // 或者 var editor = new E( document.getElementById('editor') )
-    editor.customConfig.menus = [
+    apply.customConfig.menus = [
       'head',  // 标题
   'bold',  // 粗体
   'fontSize',  // 字号
@@ -38,13 +38,13 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
   'justify',  // 对齐方式
   'table',  // 表格
 ]
-    editor.create();
+    apply.create();
 
 
     var E = $window.wangEditor;
-    var editor = new E('#parameter');
+    var parameter = new E('#parameter');
     // // 或者 var editor = new E( document.getElementById('editor') )
-    editor.customConfig.menus = [
+    parameter.customConfig.menus = [
       'head',  // 标题
   'bold',  // 粗体
   'fontSize',  // 字号
@@ -56,7 +56,7 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
   'justify',  // 对齐方式
   'table',  // 表格
 ]
-    editor.create();
+    parameter.create();
 
     //退出系统
     $scope.logout=function(){
@@ -143,7 +143,7 @@ $scope.add=function(){
               var workid={
                         method:'POST',
                         url:'http://'+IpAdress+':8080/ProductCenter/addProduct',
-                        params: {type:$scope.type;apply:editor.txt.html();parameter:$scope.parameter;firstclass:$scope.new_firstclass;secondclass:$scope.new_secondclass;image:response.data.path},
+                        params: {type:$scope.type;apply:apply.txt.html();parameter:parameter.txt.html();firstclass:$scope.new_firstclass;secondclass:$scope.new_secondclass;image:response.data.path},
                       }
                       $http(workid).then(function(response){
                         // 刷新产品信息
