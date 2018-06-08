@@ -9,7 +9,7 @@ ng_app.controller("WatchGoodsCtrl", ['$scope', '$interval', '$timeout', '$window
       var IpAdress:string="39.105.79.4";
     }
     else{
-      var IpAdress:string="10.134.40.219";
+      var IpAdress:string="10.134.38.92";
     }
 var receiveId=$location.absUrl().split("=").pop();
 

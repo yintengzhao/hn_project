@@ -22,21 +22,24 @@
 <div id="img-area">
   <img id="pro-img" ng-src="http://{{allpros.image}}">
 </div>
-<md-content style="margin-top:1px">
+<md-content>
   <md-tabs >
      <md-tab label="主要用途">
-       <div ng-bind-html="apply_as_html"></div>
+       <md-content>
+         <div ng-bind-html="apply_as_html"></div>
+       </md-content>
          <!-- <p class="attr-value">
            【用途】： <span class="apply">{{allpros.apply}}</span><br>
          </p> -->
      </md-tab>
      <md-tab label="技术参数">
-       <div ng-bind-html="parameter_as_html"></div>
+       <md-content>
+         <div ng-bind-html="parameter_as_html"></div>
+       </md-content>
          <!-- <p class="attr-value">
            【参数】： <span class="parameter">{{allpros.parameter}}</span><br>
          </p> -->
      </md-tab>
-
    </md-tabs>
 </md-content>
 <div id="bottom-word">
