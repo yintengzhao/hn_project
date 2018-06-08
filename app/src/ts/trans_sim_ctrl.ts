@@ -11,20 +11,7 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
     else{
       var IpAdress:string="10.134.40.219";
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//创建wangEditor..................................................
 
     var E = $window.wangEditor;
     var apply = new E('#apply');
@@ -61,7 +48,7 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
 ]
     parameter.create();
 
-    //退出系统
+    //退出系统.......................................................
     $scope.logout=function(){
       $http.get("http://"+IpAdress+":8080/ProductCenter/logout").then(
         function(response){
@@ -151,13 +138,10 @@ $scope.add=function(){
               fe.append('image',response.data.path)
               // 添加模块
               var workid={
-
-
                         method:'POST',
                         url:'http://'+IpAdress+':8080/ProductCenter/addProduct',
                         data: fe,
                         headers: {'Content-Type':undefined},
-
                         // params: {type:$scope.type;apply:apply.txt.html();parameter:parameter.txt.html();firstclass:$scope.new_firstclass;secondclass:$scope.new_secondclass;image:response.data.path},
                       }
                       $http(workid).then(function(response){
@@ -185,17 +169,18 @@ $scope.add=function(){
             function(response){console.log(response)}
           );
 }
-// 展示后台信息
+// 展示后台信息......................................
 $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
           .then(function(response) {
             for(let ma of response.data){
+
               ma.apply=ma.apply.substring(0,20);
               ma.parameter=ma.parameter.substring(0,20);
 
             }
             $scope.allpros = response.data;
           });
-// 删除模块
+// 删除模块..........................................
 $scope.del_pro=function(proid){
   var workid={
     method:'POST',
@@ -206,7 +191,9 @@ $scope.del_pro=function(proid){
     $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
               .then(function(response) {
                 for(let ma of response.data){
-                  ma.apply=ma.apply.substring(0,30)
+                  ma.apply=ma.apply.substring(0,30);
+                  ma.parameter=ma.parameter.substring(0,30);
+
                 }
                 $scope.allpros = response.data;
               });
@@ -222,7 +209,9 @@ $scope.search_pro=function(){
   };
   $http(workid).then(function(response){
     for(let ma of response.data){
-      ma.apply=ma.apply.substring(0,30)
+      ma.apply=ma.apply.substring(0,30);
+      ma.parameter=ma.parameter.substring(0,30);
+
     }
     $scope.allpros = response.data;    },function(){})
 }

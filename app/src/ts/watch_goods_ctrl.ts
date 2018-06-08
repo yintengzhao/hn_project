@@ -20,6 +20,8 @@ var workid={
         }
         $http(workid).then(function(response){
           $scope.allpros = response.data;
+          $scope.apply_as_html = $sce.trustAsHtml( $scope.allpros.apply );
+          $scope.parameter_as_html = $sce.trustAsHtml( $scope.allpros.parameter );
         },function(){});
 
 

@@ -25,14 +25,16 @@
 <md-content style="margin-top:1px">
   <md-tabs >
      <md-tab label="主要用途">
-         <p class="attr-value">
+       <div ng-bind-html="apply_as_html"></div>
+         <!-- <p class="attr-value">
            【用途】： <span class="apply">{{allpros.apply}}</span><br>
-         </p>
+         </p> -->
      </md-tab>
      <md-tab label="技术参数">
-         <p class="attr-value">
-           【参数】： <span class="parameter">{{allpros.parammeter}}</span><br>
-         </p>
+       <div ng-bind-html="parameter_as_html"></div>
+         <!-- <p class="attr-value">
+           【参数】： <span class="parameter">{{allpros.parameter}}</span><br>
+         </p> -->
      </md-tab>
 
    </md-tabs>
