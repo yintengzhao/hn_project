@@ -4,7 +4,7 @@ import * as __angular from "angular";
 declare global {
     const angular: typeof __angular;
 }
-var IpAdress:string="10.134.40.219";
+var IpAdress:string="10.134.38.92";
 
 //====
 

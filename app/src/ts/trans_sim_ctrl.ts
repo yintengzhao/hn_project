@@ -9,7 +9,7 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
       var IpAdress:string="39.105.79.4";
     }
     else{
-      var IpAdress:string="10.134.38.92";
+      var IpAdress:string="10.134.38.61";
     }
 //创建wangEditor..................................................
 
@@ -151,8 +151,13 @@ $scope.add=function(){
                                     for(let ma of response.data){
                                       ma.apply=ma.apply.substring(0,30);
                                       ma.parameter=ma.parameter.substring(0,30);
-                                    }
+                                    };
                                     $scope.allpros = response.data;
+
+                                    $scope.warn_tab_flag=true;
+                                    $timeout(function(){
+                                      $scope.warn_tab_flag=false;
+                                    },1300);
                                   });
                       },function(){
                         $http.get("http://"+IpAdress+":8080/ProductCenter/showAll")
@@ -196,6 +201,12 @@ $scope.del_pro=function(proid){
 
                 }
                 $scope.allpros = response.data;
+
+                $scope.warn_tab_flag=true;
+                $timeout(function(){
+                  $scope.warn_tab_flag=false;
+                },1300);
+
               });
   },function(){})
 
@@ -270,6 +281,8 @@ $scope.qwe_2=function(display_secondClass){
 //查看主要类商品
 $scope.del_tab_flag=false;
 $scope.showByFirstclass=function(firstClassid,firstClassname){
+  $scope.class_inform=firstClassname;
+  $scope.second_class_inform="";
   var workid = {
     method: 'POST',
     url: 'http://'+IpAdress+':8080/ProductCenter/showByFirstclass',
@@ -277,6 +290,10 @@ $scope.showByFirstclass=function(firstClassid,firstClassname){
     params: { id: firstClassid },
   }
   $http(workid).then(function(response) {
+    for(let ma of response.data){
+      ma.apply=ma.apply.substring(0,30);
+      ma.parameter=ma.parameter.substring(0,30);
+    };
     $scope.allpros=response.data;
   }, function() { });
   //删除主类别
@@ -308,6 +325,7 @@ $scope.showByFirstclass=function(firstClassid,firstClassname){
 }
 //查看次要类商品
 $scope.showBySecondclass=function(secondClassid,secondClassname){
+  $scope.second_class_inform="--->"+secondClassname;
   var workid = {
     method: 'POST',
     url: 'http://'+IpAdress+':8080/ProductCenter/showBySecondclass',
@@ -315,6 +333,10 @@ $scope.showBySecondclass=function(secondClassid,secondClassname){
     params: { id: secondClassid },
   }
   $http(workid).then(function(response) {
+    for(let ma of response.data){
+      ma.apply=ma.apply.substring(0,30);
+      ma.parameter=ma.parameter.substring(0,30);
+    };
     $scope.allpros=response.data;
   }, function() { });
   //删除次类别

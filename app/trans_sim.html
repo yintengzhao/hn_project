@@ -55,7 +55,7 @@
     </div>
     <div id="pro-table">
       <div id="nav-bar">
-        产品信息
+        {{class_inform}}{{second_class_inform}}  &nbsp;&nbsp; 产品信息
         <ng-md-icon icon="delete_sweep" style="fill:red;cursor:pointer;float:right" size="30px" ng-click="del_firstclass()">
         </ng-md-icon>
       </div>
@@ -70,7 +70,7 @@
               <th>用途</th>
               <th>参数</th>
               <th>图片</th>
-              <th>更新</th>
+              <!-- <th>更新</th> -->
               <th>删除</th>
             </tr>
           </thead>
@@ -87,9 +87,9 @@
                   <ng-md-icon icon="photo" style="fill: ...;cursor:pointer" size="30px"></ng-md-icon>
                 </a>
               </td>
-              <td>
+              <!-- <td>
                 <ng-md-icon icon="edit" style="fill: ...;cursor:pointer" size="30px" ng-click=update_inventory(inventory.name,inventory.num,inventory.safenum,inventory.islandnum,inventory.zone,inventory.id)></ng-md-icon>
-              </td>
+              </td> -->
               <td>
                 <ng-md-icon icon="delete_sweep" style="fill: ...;cursor:pointer" size="30px" ng-click="del_pro(pro.id)"></ng-md-icon>
               </td>
@@ -106,13 +106,13 @@
     <md-content id="add-tab">
       <md-input-container class="md-block" flex-gt-sm>
         <label>型号</label>
-        <input ng-model="type">
+        <input ng-model="type" required>
       </md-input-container>
       <!-- {{according_firstclass}} -->
 
       <md-input-container class="md-block" flex-gt-sm>
         <label>主类别</label>
-        <md-select ng-model="according_firstclass">
+        <md-select ng-model="according_firstclass" required>
           <md-option ng-repeat="firstClass in firstClasses" value="{{firstClass}}" ng-click="qwe(firstClass)">{{firstClass.name}}</md-option>
           <button style="width:100%;border:none;font-size:24px" ng-click="toggleSidenav()">+</button>
         </md-select>
@@ -120,7 +120,7 @@
 
       <md-input-container class="md-block" flex-gt-sm>
         <label>次类别</label>
-        <md-select ng-model="according_secondclass">
+        <md-select ng-model="according_secondclass" required>
           <md-option ng-repeat="display_secondClass in display_secondClasses" value="{{display_secondClass}}" ng-click="qwe_2(display_secondClass)">{{display_secondClass.name}}</md-option>
           <button style="width:100%;border:none;font-size:24px" ng-click="toggleSidenav_2()">+</button>
         </md-select>

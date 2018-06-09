@@ -25,46 +25,23 @@
 <div layout="row" id="pro-part" ng-show="pro_part_flag">
   <div  id="first-class">
     <!-- 一级产品列表 -->
-    <md-button style="width:100%" ng-click="rec()">所有产品</md-button>
-    <md-button style="width:100%" ng-click="first()">组合开关</md-button>
-    <md-button style="width:100%" ng-click="second()">通讯控制</md-button>
-    <md-button style="width:100%" ng-click="third()">传感器</md-button>
-    <md-button style="width:100%" ng-click="fourth()">变频器</md-button>
-    <md-button style="width:100%" ng-click="fifth()">负荷中心</md-button>
-    <md-button style="width:100%" ng-click="sixth()">支架电液</md-button>
+    <md-content style="height:100%">
+      <md-button style="width:100%" ng-click="rec()">所有产品</md-button>
+      <md-button style="width:100%" ng-click="dis_second_class(firstClass.id)" ng-repeat="firstClass in firstClasses">{{firstClass.name}}</md-button>
+    </md-content>
+
   </div>
   <!-- 二级产品列表 -->
-  <div ng-show="first_flag" id="second-class">
-    <div id="ppp"  ng-click="first_1()">2-4组合隔爆兼本质安全型</div>
-    <div id="ppp" ng-click="first_2()">4-6矿用隔爆兼本质安全型</div>
-    <div id="ppp" ng-click="first_3()">6-8矿用隔爆兼本质安全型</div>
-    <div id="ppp" ng-click="first_4()">9-10矿用隔爆兼本质安全型</div>
-    <div id="ppp" ng-click="first_5()">9-12矿用隔爆兼本质安全型</div>
-    <div id="ppp" ng-click="first_6()">8-9卧式矿用隔爆兼本质安全型</div>
-  </div>
-  <div ng-show="second_flag" id="second-class">
-    <div id="ppp" ng-click="second_1()">KTC101系列组合扩音电话</div>
-    <div id="ppp" ng-click="second_2()">KTC102系列组合扩音电话</div>
-    <div id="ppp" ng-click="second_3()">急停闭锁开关</div>
-    <div id="ppp" ng-click="second_4()">控制器</div>
-    <div id="ppp" ng-click="second_5()">多功能终端</div>
-    <div id="ppp" ng-click="second_6()">电源</div>
-    <div id="ppp" ng-click="second_7()">输入输出</div>
-  </div>
-  <div ng-show="third_flag" id="second-class">
-    <div id="ppp" ng-click="third_1()">速度传感器CSC6</div>
-    <div id="ppp" ng-click="third_2()">堆煤传感器GUD-330</div>
-    <div id="ppp" ng-click="third_3()">跑偏传感器GEJ-15</div>
-    <div id="ppp" ng-click="third_4()">温度传感器GWM-45</div>
-    <div id="ppp" ng-click="third_5()">烟雾传感器GQL0.1</div>
-  </div>
+  <div ng-show="second_class_flag" id="second-class" >
+    <!-- <div id="ppp"  ng-click="showBySecondclass(secondClass.id)" ng-repeat="secondClass in secondClasses">{{secondClass.name}}</div> -->
+    <md-content layout="column">
 
-  <div ng-show="sixth_flag" id="second-class">
-    <div id="ppp" ng-click="sixth_1()">阀类产品</div>
-    <div id="ppp" ng-click="sixth_2()">电控产品</div>
-  </div>
+      <button id="ppp"  ng-click="showBySecondclass(secondClass.id)" ng-repeat="secondClass in secondClasses">{{secondClass.name}}</button>
+
+    </md-content>
 
 
+  </div>
 
 <md-content layout="row" ng-show="allpros_flag" id="all-pros">
 <div id="first-column" layout="column">
