@@ -9,7 +9,7 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
       var IpAdress:string="39.105.79.4";
     }
     else{
-      var IpAdress:string="10.134.38.61";
+      var IpAdress:string="10.134.38.51";
     }
 //创建wangEditor..................................................
 

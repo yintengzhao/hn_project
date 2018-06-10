@@ -8,7 +8,7 @@ if (Ip_Flag == true) {
   var IpAdress: string = "39.105.79.4";
 }
 else {
-  var IpAdress: string = "10.134.38.61";
+  var IpAdress: string = "10.134.38.51";
 }
 $scope.allpros_flag = true;
 $scope.second_class_flag=false;

@@ -39,8 +39,7 @@
         <!-- <md-button class="md-raised md-warn" >搜索</md-button> -->
       </div>
       <div id="login">
-        <!-- <md-button ng-click="" style="font-size:20px;border-radius:15px">登录</md-button>/ -->
-        <md-button ng-click="logout()" style="font-size:20px;border-radius:15px">退出</md-button>
+        <md-button ng-click="logout()" style="font-size:20px;border-radius:15px;background-color: rgb(233, 64, 74)">退出</md-button>
       </div>
 
     </div>
@@ -56,10 +55,8 @@
     <div id="pro-table">
       <div id="nav-bar">
         {{class_inform}}{{second_class_inform}}  &nbsp;&nbsp; 产品信息
-        <ng-md-icon icon="delete_sweep" style="fill:red;cursor:pointer;float:right" size="30px" ng-click="del_firstclass()">
-        </ng-md-icon>
       </div>
-      <md-content >
+      <md-content id="table_content">
         <table class="watch-table">
           <thead>
             <tr>
@@ -96,7 +93,10 @@
             </tr>
           </tbody>
         </table>
+
       </md-content>
+      <md-button id="del_all"  style="" ng-click="del_firstclass()">全部删除
+      </md-button>
     </div>
 
 
@@ -136,11 +136,11 @@
         </div>
       </div>
         <div id="apply">
-            <p>用途...</p>
+            <p>用途：</p>
         </div>
 
         <div id="parameter">
-            <p>参数...</p>
+            <p>参数：</p>
         </div>
 <div>
   <md-button class="md-raised md-primary" id="add-btn" ng-click="add()" style="border-radius:15px;">添加</md-button>
