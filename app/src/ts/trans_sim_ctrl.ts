@@ -229,7 +229,9 @@ $scope.search_pro=function(){
     $scope.allpros = response.data;    },function(){})
 }
 //列表模块
-$scope.dis_second_class=function(firstclassid){
+$scope.dis_second_class=function(firstclassid,firstClassname){
+  $scope.class_inform=firstClassname;
+  $scope.second_class_inform="";
   $scope.second_class_flag=true;
   //展示二级列表
   var workid = {
