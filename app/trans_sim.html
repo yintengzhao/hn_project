@@ -64,8 +64,8 @@
               <th>机器型号</th>
               <th>主类别</th>
               <th>次类别</th>
-              <th>用途</th>
-              <th>参数</th>
+              <!-- <th>用途</th>
+              <th>参数</th> -->
               <th>图片</th>
               <!-- <th>更新</th> -->
               <th>删除</th>
@@ -77,8 +77,8 @@
               <td>{{pro.type}}</td>
               <td>{{pro.firstclass}}</td>
               <td>{{pro.secondclass}}</td>
-              <td>{{pro.apply}}......</td>
-              <td>{{pro.parameter}}</td>
+              <!-- <td>{{pro.apply}}......</td>
+              <td>{{pro.parameter}}</td> -->
               <td>
                 <a href="http://{{pro.image}}">
                   <ng-md-icon icon="photo" style="fill: ...;cursor:pointer" size="30px"></ng-md-icon>
@@ -142,8 +142,10 @@
         <div id="parameter">
             <p>参数：</p>
         </div>
-<div>
+<div >
   <md-button class="md-raised md-primary" id="add-btn" ng-click="add()" style="border-radius:15px;">添加</md-button>
+  <md-button class="md-raised" id="add-btn" ng-click="preview()" style="border-radius:15px;">预览</md-button>
+
 
 </div>
 
@@ -210,6 +212,45 @@
 	  </div>
 	</div>
 </div>
+<!-- 预览........................................................................ -->
+<div id="preview" ng-show="preview_flag">
+  <div id="in_preview">
+
+   <span class="class"><strong>{{pre_new_firstclass}}</strong>---><strong>{{pre_new_secondclass}}</strong></span><br />
+   <span class="type">
+     {{pre_new_type}}
+   </span>
+  <!-- <hr/> -->
+  <md-divider style="color:gray"></md-divider>
+
+  <div id="img-area">
+    <div ng-repeat="item in thumb">
+            <img id="pro-img" ng-src="{{item.imgSrc}}"/>
+    </div>
+    <!-- <img id="pro-img" ng-src="http://{{allpros.image}}"> -->
+  </div>
+  <md-content id="outer_content">
+    <md-tabs >
+       <md-tab label="主要用途">
+         <md-content>
+           <div ng-bind-html="apply_as_html"></div>
+         </md-content>
+       </md-tab>
+       <md-tab label="技术参数">
+         <md-content>
+           <div ng-bind-html="parameter_as_html"></div>
+         </md-content>
+       </md-tab>
+     </md-tabs>
+  </md-content>
+  <div id="bottom-word">
+      Copyright 2018-2020 All Rights Reserved     天津华宁电子有限公司
+  </div>
+</div>
+<ng-md-icon icon="close" ng-click="close_pre()" style="position:fixed;margin-left:50%;background-color:white" size="30px"></ng-md-icon>
+</div>
+
+
 <!-- 提示弹窗 -->
 <div id="warn_myModal" class="warn_modal" ng-show="warn_tab_flag">
   <!-- 弹窗内容 -->

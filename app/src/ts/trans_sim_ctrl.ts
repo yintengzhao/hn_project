@@ -411,6 +411,19 @@ $scope.add_secondclass=function(){
   }, function() { });
 }
 
+//预览模块...........................................................
+$scope.preview=function(){
+  $scope.preview_flag=true;
+  $scope.pre_new_firstclass=$scope.new_firstclass
+  $scope.pre_new_secondclass=$scope.new_secondclass
+  $scope.pre_new_type=$scope.type
+  $scope.apply_as_html = $sce.trustAsHtml( parameter.txt.html() );
+  $scope.parameter_as_html = $sce.trustAsHtml( parameter.txt.html() );
+}
+
+$scope.close_pre=function(){
+  $scope.preview_flag=false;
+}
 
 
 

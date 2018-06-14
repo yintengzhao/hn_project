@@ -146,7 +146,7 @@
 			}
 		}
 		#pro-table{
-			width: 65%;
+			width: 60%;
 			margin-left: 10px;
 			margin-top: 10px;
 			text-align: center;
@@ -165,7 +165,7 @@
 			}
 		}
 		#geshi{
-			width: 21%;
+			width: 26%;
 			margin-left: 5px;
 			#nav-bar{
 				background-color:rgba(7, 8, 7, 0.21);
@@ -186,7 +186,7 @@
 			#add-btn{
 				position: relative;
 				margin-top: 5px;
-				width: 95%;
+				width: 45%;
 				height: 4%;
 				font-size: 28px;
 			}
@@ -510,7 +510,7 @@ button{
 			}
 		}
 		#pro-table{
-			width: 65%;
+			width: 60%;
 			margin-left: 10px;
 			margin-top: 10px;
 			text-align: center;
@@ -528,7 +528,7 @@ button{
 			}
 		}
 		#geshi{
-			width: 21%;
+			width: 26%;
 			margin-left: 5px;
 			#nav-bar{
 				background-color:rgba(7, 8, 7, 0.21);
@@ -549,7 +549,7 @@ button{
 			#add-btn{
 				position: relative;
 				margin-top: 5px;
-				width: 95%;
+				width: 45%;
 				height: 4%;
 				font-size: 28px;
 			}
@@ -736,5 +736,285 @@ button{
 	from {top:-300px; opacity:0}
 	to {top:0; opacity:1}
 }
+//yulan..............................................................
+
+
+
+#preview{
+	position: fixed;
+	z-index: 1;
+	padding-top: 0%;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+	@media screen and (min-width: 1850px){
+		#in_preview{
+margin-top:5%;
+margin-left: 40%;
+			background-color: white;
+			width: 20%;
+			height:65%;
+						#outer_content{
+							margin-top:1px;
+							height:53%;
+							padding-left: 20px;
+							padding-right: 20px;
+							md-tabs{
+								height: 99%;
+								width: 100%;
+								md-tab{
+									width: 100%;
+									height: 100%;
+								}
+								md-content{
+									width: 100%;
+									height: 100%;
+								}
+							}
+							table {
+						border-top: 1px solid #ccc;
+						border-left: 1px solid #ccc;
+					}
+					table td,
+					table th {
+						border-bottom: 1px solid #ccc;
+						border-right: 1px solid #ccc;
+						padding: 3px 5px;
+					}
+					table th {
+						border-bottom: 2px solid #ccc;
+						text-align: center;
+					}
+
+					/* blockquote 样式 */
+					blockquote {
+						display: block;
+						border-left: 8px solid #d0e5f2;
+						padding: 5px 10px;
+						margin: 10px 0;
+						line-height: 1.4;
+						font-size: 100%;
+						background-color: #f1f1f1;
+					}
+
+					/* code 样式 */
+					code {
+						display: inline-block;
+						*display: inline;
+						*zoom: 1;
+						background-color: #f1f1f1;
+						border-radius: 3px;
+						padding: 3px 5px;
+						margin: 0 3px;
+					}
+					pre code {
+						display: block;
+					}
+
+					/* ul ol 样式 */
+					ul, ol {
+						margin: 10px 0 10px 20px;
+					}
+
+						}
+		}
+
+
+
+
+		#sys-title {
+			margin-left: 100px;
+			color: black;
+			display: inline-block;
+			vertical-align: bottom;
+			font-size: 40px;
+		}
+		#img-area{
+			// margin-left: 10px;
+			// margin-right: 10px;
+			width: 100%;
+			height: 34.5%;
+			text-align: center;
+			#pro-img{
+				overflow: hidden;
+				margin-top:0px;
+				height: 210px;
+				max-height: 100%;
+				width:350px;
+				max-width: 100%;
+			}
+		}
+
+		.type{
+			display: block;
+			text-align: center;
+			font-family: fantasy;
+			font-size: 20px;
+			color: rgb(182, 30, 30)};
+		.class{
+			display: block;
+			text-align: center;
+			font-family: cursive;
+			font-size: 16px;
+			width: 100%;
+			color: rgb(142, 148, 27)};
+		.attr-value {
+			color: gray;
+			.apply{color: rgb(16, 145, 68);};
+			.parameter{color: rgb(11, 79, 94)}
+
+			}
+
+
+
+		#bottom-word{
+			height:1%;
+			position:relative;
+			color:black;
+			font-size:10px;
+			left:0;
+			right:0;
+			bottom:2px;
+			text-align:center
+		}
+		md-content{
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+
+	}
+
+@import 'watch_table';
+@media screen and(max-width: 1850px){
+	#img-area{
+		width: 100%;
+		height: 27%;
+		text-align: center;
+	}
+
+
+	#pro-img{
+		overflow: hidden;
+		margin-top:0px;
+		height: auto;
+		max-height: 100%;
+		width:auto;
+		max-width: 100%;
+		// height:150px;
+
+	}
+	#sys-title {
+		width: 35%;
+		color: black;
+		display: inline-block;
+		vertical-align: top;
+		font-size: 28px;
+		padding-top: 10px;
+	}
+	.type{
+		display: block;
+		text-align: center;
+		font-family: fantasy;
+		font-size: 20px;
+		color: rgb(182, 30, 30)};
+	.class{
+		display: block;
+		text-align: center;
+		font-family: cursive;
+		font-size: 16px;
+		width: 100%;
+		color: rgb(142, 148, 27)};
+	.attr-value {
+		color: gray;
+		.apply{color: rgb(16, 145, 68);};
+		.parameter{color: rgb(11, 79, 94)}
+
+		}
+	md-content{
+		margin-top:1px;
+		height:59%;
+		padding-left: 20px;
+		padding-right: 20px;
+		md-tabs{
+			height: 99%;
+			width: 100%;
+			md-content{
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+
+
+
+		table {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+table td,
+table th {
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 3px 5px;
+}
+table th {
+  border-bottom: 2px solid #ccc;
+  text-align: center;
+}
+
+/* blockquote 样式 */
+blockquote {
+  display: block;
+  border-left: 8px solid #d0e5f2;
+  padding: 5px 10px;
+  margin: 10px 0;
+  line-height: 1.4;
+  font-size: 100%;
+  background-color: #f1f1f1;
+}
+
+/* code 样式 */
+code {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  padding: 3px 5px;
+  margin: 0 3px;
+}
+pre code {
+  display: block;
+}
+
+/* ul ol 样式 */
+ul, ol {
+  margin: 10px 0 10px 20px;
+}
+
+
+
+
+
+	}
+	#bottom-word{
+		height:1%;
+		position:relative;
+		color:black;
+		font-size:7px;
+		left:0;
+		right:0;
+		top: 0%;
+		text-align:center
+	}
+
+}
+
+}
+
 }
 }
