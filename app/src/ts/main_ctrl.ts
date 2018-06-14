@@ -3,7 +3,9 @@ import { ng_app } from './ng_app';
 
 ng_app.controller("MainCtrl", ['$scope', '$interval', '$timeout', '$window', '$http', '$sce',
   function($scope, $interval, $timeout, $window, $http, $sce) {
-    var IpAdress: string = "10.134.38.51";
+    // var IpAdress: string = "10.134.38.51";
+    var IpAdress: string = "39.105.79.4";
+
     $scope.login = function() {
       var workid = {
         method: 'POST',

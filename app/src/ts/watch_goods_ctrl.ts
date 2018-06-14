@@ -3,14 +3,17 @@ import { ng_app } from './ng_app';
 
 ng_app.controller("WatchGoodsCtrl", ['$scope', '$interval', '$timeout', '$window', '$http', '$sce','$location',
   function($scope, $interval, $timeout, $window, $http, $sce,$location) {
-    var Ip_Flag=false;
-    var IpAdress:string
-    if(Ip_Flag==true){
-      var IpAdress:string="39.105.79.4";
-    }
-    else{
-      var IpAdress:string="10.134.38.51";
-    }
+    // var Ip_Flag=false;
+    // var IpAdress:string
+    // if(Ip_Flag==true){
+    //   var IpAdress:string="39.105.79.4";
+    // }
+    // else{
+    //   var IpAdress:string="10.134.38.51";
+    // }
+
+    var IpAdress: string = "39.105.79.4";
+
 var receiveId=$location.absUrl().split("=").pop();
 
 var workid={

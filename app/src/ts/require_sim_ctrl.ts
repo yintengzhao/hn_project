@@ -2,14 +2,17 @@ import { ng_app } from './ng_app';
 // angular.element('[ng-controller=MainCtrl]').scope()
 ng_app.controller("RequireSimCtrl", ['$scope', '$interval', '$timeout', '$window', '$http', '$sce',
   function($scope, $interval, $timeout, $window, $http, $sce) {
-    var Ip_Flag = false;
-    var IpAdress: string
-if (Ip_Flag == true) {
-  var IpAdress: string = "39.105.79.4";
-}
-else {
-  var IpAdress: string = "10.134.38.51";
-}
+//     var Ip_Flag = false;
+//     var IpAdress: string
+// if (Ip_Flag == true) {
+//   var IpAdress: string = "39.105.79.4";
+// }
+// else {
+//   var IpAdress: string = "10.134.38.51";
+// }
+
+var IpAdress: string = "39.105.79.4";
+
 $scope.allpros_flag = true;
 $scope.second_class_flag=false;
 
