@@ -1,63 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title></title>
-    <link rel="stylesheet" href="/build/vendor.css">
-    <link rel="stylesheet" href="/build/application.css">
 
-    <script type="text/javascript" src="./libs/wangeditor/release/wangEditor.min.js"></script>
-    <script src="require.js" defer async="true" data-main="build/root"></script>
-  </head>
-  <body ng-controller="MainCtrl" id="main" ng-class="" ng-cloak>
-    <div style="width:100%;height:100%;background-color: rgba(0, 0, 0, 0.7);">
-      <div id="title">
-        <div id="sys-title-logo" layout="row">
-          <div id="logo">
-            <img src="assets/huaning-logo.png">
-          </div>
-          <div id="sys-title"><strong>天津华宁电子有限公司产品展示系统</strong></div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-        </div>
-      </div>
+  <title></title>
+  <link rel="stylesheet" href="/build/vendor.css">
+  <link rel="stylesheet" href="/build/application.css">
+  <script src="require.js" defer async="true" data-main="build/root"></script>
+</head>
 
-      <div id="login_area">
-        <h3 class="md-display-1" >登录</h3>
-        <md-input-container class="md-block" id="search-bar" >
-          <label>用户名</label>
-          <input  ng-model="username" style="width:100%;">
-        </md-input-container>
+<body ng-controller="RequireSimCtrl" id="require_sim" ng-class="" ng-cloak>
 
-        <md-input-container class="md-block" id="search-bar" >
-          <label>密码</label>
-          <input  ng-model="password" type="password" style="width:100%;">
-        </md-input-container>
-
-        <md-button ng-click="login()" class="md-raised" style="background-color:rgb(47, 242, 172);width:97%;border-radius:10px;font-size:20px">登录</md-button>
-
-      </div>
-  <!-- <button ng-click="get_html()">登录状态</button>
-  <button ng-click="logout()">退出登录</button> -->
-
+  <div id="sys-title-logo" style="">
+    <div id="logo">
+      <img src="assets/huaning-logo.png">
     </div>
+    <div id="sys-title"><strong>产品展示</strong></div>
+    <ng-md-icon id="search-icon" icon="search" size="25px" ng-click="search_pro()"></ng-md-icon>
+  </div>
+<!-- <hr/> -->
+<!-- <md-divider style="color:gray"></md-divider> -->
+<div layout="row" id="pro-part" ng-show="pro_part_flag">
+  <div  id="first-class">
+    <!-- 一级产品列表 -->
+    <md-content style="height:100%">
+      <md-button style="width:100%" ng-click="rec()">所有产品</md-button>
+      <md-button style="width:100%" ng-click="dis_second_class(firstClass.id)" ng-repeat="firstClass in firstClasses">{{firstClass.name}}</md-button>
+    </md-content>
+
+  </div>
+  <!-- 二级产品列表 -->
+  <div ng-show="second_class_flag" id="second-class" >
+    <!-- <div id="ppp"  ng-click="showBySecondclass(secondClass.id)" ng-repeat="secondClass in secondClasses">{{secondClass.name}}</div> -->
+    <md-content layout="column">
+
+      <button id="ppp"  ng-click="showBySecondclass(secondClass.id)" ng-repeat="secondClass in secondClasses">{{secondClass.name}}</button>
+
+    </md-content>
+
+
+  </div>
+
+<md-content layout="row" ng-show="allpros_flag" id="all-pros">
+<div id="first-column" layout="column">
+  <md-content>
+    <div id="eeee" ng-repeat="pros in test" layout="row">
+      <div id="ffff" ng-repeat="pro in pros" layout="column">
+        <a href="watch_goods.html?id={{pro.id}}" id="first_href">
+        <img ng-src="http://{{pro.image}}">
+        <div>
+          <strong>{{pro.type}}</strong>
+        </div>
+        </a>
+      </div>
+    </div>
+  </md-content>
+</div>
+</md-content>
+</div>
 
 
 
+<div id="gray_box" ng-show="search_bar_flag" ng-click="hide_search_bar($event)">
+  <div id="seearch-bar-back" style="" ng-click="prevent_event($event)" layout="row">
+    <md-input-container class="md-block" id="search-bar" >
+      <label>在此键入关键字</label>
+      <input  ng-model="the_max" style="width:100%;">
+    </md-input-container>
+    <ng-md-icon id="search-icon" icon="search" size="30px" ng-click="show_pro()"></ng-md-icon>
+  </div>
 
-    <!-- <div id="editor">
-        <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
-    </div> -->
-
-
-    <!-- <div id="modules" layout="column">
-      <a href="trans_sim.html">
-        <div id="trans_sim" class="module blue">管理员系统</div>
-      </a>
-      <a href="require_sim.html">
-        <div class="module red">用户系统</div>
-      </a>
-    </div> -->
-
-  </body>
+</div>
+<div id="bottom-word" ng-click="show_back()">
+    Copyright 2018-2020 All Rights Reserved     天津华宁电子有限公司
+</div>
+</body>
 </html>
