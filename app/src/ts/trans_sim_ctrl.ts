@@ -54,12 +54,12 @@ ng_app.controller("TransSimCtrl", ['$scope', '$interval', '$timeout', '$window',
     $scope.logout=function(){
       $http.get("http://"+IpAdress+":8080/ProductCenter/logout").then(
         function(response){
-          $window.location.href="index.html";
+          $window.location.href="login.html";
         },
 
         function(){
           alert('logout err');
-          $window.location.href="index.html";
+          $window.location.href="login.html";
 
         });
     }
@@ -417,7 +417,7 @@ $scope.preview=function(){
   $scope.pre_new_firstclass=$scope.new_firstclass
   $scope.pre_new_secondclass=$scope.new_secondclass
   $scope.pre_new_type=$scope.type
-  $scope.apply_as_html = $sce.trustAsHtml( parameter.txt.html() );
+  $scope.apply_as_html = $sce.trustAsHtml( apply.txt.html() );
   $scope.parameter_as_html = $sce.trustAsHtml( parameter.txt.html() );
 }
 

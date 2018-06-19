@@ -37,7 +37,7 @@ ng_app.service('$check_login',function($window,$http){
               if(response.data.result=="loggedout")
               {
                 alert('请输入用户名和密码')
-                $window.location.href="index.html";
+                $window.location.href="login.html";
               }
               else{
               }
